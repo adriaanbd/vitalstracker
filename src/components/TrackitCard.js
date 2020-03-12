@@ -10,7 +10,7 @@ function TrackitCard() {
         <div>1 January 2020</div>
         <div>Glucose: 110</div>
       </div>
-      <div className="trackit-mainmeasure">135 LBS\</div>
+      <div className="trackit-mainmeasure">135 LBS</div>
     </div>
   );
 }
