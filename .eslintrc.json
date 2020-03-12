@@ -4,6 +4,7 @@
       "es6": true,
       "jest": true
     },
+    "parser": "babel-eslint", // added due to unexpected token "<". See: https://stackoverflow.com/a/43426331/7076186
     "parserOptions": {
       "ecmaVersion": 2018,
       "sourceType": "module"

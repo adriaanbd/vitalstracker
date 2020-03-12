@@ -1,0 +1,23 @@
+#trackit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100vw;
+  height: 100%;
+}
+
+.trackit-day {
+  background-color: #e5eaee;
+  color: #67899c;
+  border-top: 1px solid #67899c;
+  border-bottom: 1px solid #67899c;
+  height: 1.4rem;
+  text-align: start;
+  padding: .1rem;
+  padding-left: .5rem;
+}
+
+.trackit-card {
+  padding: .5rem;
+}
