@@ -1,0 +1,40 @@
+.vitals-frame {
+  display: grid;
+  grid-template-rows: 1rem 1fr 1rem 1fr 1rem 1fr 1rem;
+  grid-template-columns: 1rem 1fr 1rem 1fr 1rem;
+  grid-template-areas:
+  ". . . . ."
+  ". a . b ."
+  ". . . . ."
+  ". c . d ."
+  ". . . . ."
+  ". e . f ."
+  ". . . . .";
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid black;
+}
+
+#systolic-card {
+  grid-area: a;
+};
+
+#diastolic-card {
+  grid-area: b;
+}
+
+#weight-card {
+  grid-area: c;
+}
+
+#mood-card {
+  grid-area: d;
+}
+
+#temperature-card {
+  grid-area: e;
+}
+
+#glucose-card {
+  grid-area: f;
+}
