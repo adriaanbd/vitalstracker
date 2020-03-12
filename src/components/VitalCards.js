@@ -15,37 +15,37 @@ function VitalCards() {
   return (
     <div className="vitals-frame">
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faHeartbeat} /> }
+        icon={ <FontAwesomeIcon icon={faHeartbeat} size="3x" /> }
         title={ "Systolic Pressure" }
         className="vital-card"
         id="systolic-card"
       />
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faHeartbeat} /> }
+        icon={ <FontAwesomeIcon icon={faHeartbeat} size="3x" /> }
         title={ "Diastolic Pressure" }
         className="vital-card"
         id="diastolic-card"
       />
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faWeight} /> }
+        icon={ <FontAwesomeIcon icon={faWeight} size="3x" /> }
         title={ "Weight" }
         className="vital-card"
         id="weight-card"
       />
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faSmile} /> }
+        icon={ <FontAwesomeIcon icon={faSmile} size="3x" /> }
         title={ "Mood" }
         className="vital-card"
         id="mood-card"
       />
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faThermometerHalf} /> }
+        icon={ <FontAwesomeIcon icon={faThermometerHalf} size="3x" /> }
         title={ "Temperature" }
         className="vital-card"
         id="temperature-card"
       />
       <VitalCard
-        icon={ <FontAwesomeIcon icon={faAppleAlt} /> }
+        icon={ <FontAwesomeIcon icon={faAppleAlt} size="3x" /> }
         title={ "Glucose" }
         className="vital-card"
         id="glucose-card"
