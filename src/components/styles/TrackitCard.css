@@ -1,0 +1,16 @@
+.trackit-card {
+  display: flex;
+  width: 100%;
+}
+
+.trackit-icon {
+  width: 25%;
+}
+
+.trackit-date-and-submeasure {
+  width: 50%;
+}
+
+.trackit-mainmeasure {
+  width: 25%;
+}
