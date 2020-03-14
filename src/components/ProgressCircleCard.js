@@ -1,8 +1,14 @@
 import React from 'react';
 
-function ProgressCircleCard() {
+function ProgressCircleCard(props) {
   return (
-    <div></div>
+    <div className="progress-circle-card">
+      <div className="progress-circle">
+        <div className="progress-measure">{ props.measure }</div>
+        <div className="progress-units">{ props.unit }</div>
+      </div>
+      <div className="progress-title">{ props.title }</div>
+    </div>
   );
 }
 

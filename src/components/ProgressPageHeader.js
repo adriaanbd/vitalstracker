@@ -9,9 +9,9 @@ function ProgressHeader() {
     <div className="progress-header">
       <ProgressDateHeader />
       <div className="main-progress-status">
-          <ProgressCircleCard />
-          <ProgressCircleCard />
-          <ProgressCircleCard />
+        <ProgressCircleCard title={'Total'} measure={'XX'} unit={'uu'} />
+        <ProgressCircleCard title={'Total'} measure={'XX'} unit={'uu'} />
+        <ProgressCircleCard title={'Total'} measure={'XX'} unit={'uu'} />
       </div>
     </div>
   );

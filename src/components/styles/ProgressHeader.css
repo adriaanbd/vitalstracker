@@ -1,5 +1,28 @@
 .progress-header {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-};
+  width: 100%;
+  color: #67899c;
+}
+
+.progress-circle-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-circle {
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  border: 2px solid #67899c;
+  padding: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.main-progress-status {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
