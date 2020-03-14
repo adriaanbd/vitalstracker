@@ -6,13 +6,13 @@ import './styles/ProgressDateHeader.css';
 function ProgressDateHeader() {
   return (
     <div className="date-container">
-      <div className="previous-date-angle-left">
+      <div id="previous-date-angle-left" className="date-angle-arrow">
         {<FontAwesomeIcon icon={faAngleLeft} />}
       </div>
-      <div className="progress-date">
+      <div id="progress-date">
         1 January 2020
       </div>
-      <div className="previous-date-angle-right">
+      <div id="next-date-angle-right" className="date-angle-arrow">
         {<FontAwesomeIcon icon={faAngleRight} />}
       </div>
     </div>
