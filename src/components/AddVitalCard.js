@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles/AddVitalCard.css'
+import './styles/AddVitalCard.css';
 
-const UNITS = ['LB', 'KG']
+const UNITS = ['LB', 'KG'];
 
 function setUnits() {
   return [
@@ -10,7 +10,7 @@ function setUnits() {
 }
 
 function AddVitalCard(props) {
-  const { icon, title, id } = props
+  const { icon, title, id } = props;
   return (
     <div className="add-vital-card" id={id}>
       <div id="vital-card-icon">{ icon }</div>
