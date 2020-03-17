@@ -1,0 +1,52 @@
+#profile-page-frame {
+  height: 100%;
+  width: 100vw;
+}
+
+#profile-top {
+  height: 50%;
+  background-color: #62b5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-bot {
+  height:50%;
+  background-color: #e5eaee;
+}
+
+#profile-avatar-name-gender-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#profile-avatar-box {
+  display: flex;
+  margin: 1rem;
+  color: #455a65;
+}
+
+#name-gender-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-name-box {
+  color: white;
+}
+
+#profile-gender-height-box {
+  margin-top: 0.2rem;
+  color: #455a65;
+}
+
+#profile-gender {
+  margin-right: 2px;
+}
+
+#profile-height {
+  margin-left: 2px;
+}

@@ -1,14 +1,12 @@
 import React from 'react';
-import HeaderRibbon from './HeaderRibbon';
 import NavFooter from './NavFooter';
 import './styles/App.css';
-import Menu from './Menu';
+import ProfilePage from './ProfilePage';
 
 function App() {
   return (
     <>
-      <HeaderRibbon />
-      <Menu />
+      <ProfilePage />
       <NavFooter />
     </>
   );
