@@ -2,13 +2,13 @@ import React from 'react';
 import HeaderRibbon from './HeaderRibbon';
 import NavFooter from './NavFooter';
 import './styles/App.css';
-import ProgressPage from './ProgressPage';
+import Menu from './Menu';
 
 function App() {
   return (
     <>
       <HeaderRibbon />
-      <ProgressPage />
+      <Menu />
       <NavFooter />
     </>
   );
