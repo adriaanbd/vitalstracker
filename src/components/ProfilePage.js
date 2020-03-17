@@ -27,7 +27,21 @@ function ProfilePage(props) {
           </div>
         </div>
       </div>
-      <div id="profile-bot"></div>
+      <div id="profile-bot">
+        <div id="edit-box">
+          <div id="profile-edit-photo-box" className="profile-edit-box">
+            <span id="profile-edit-photo" className="profile-edit">
+              Edit Photo
+            </span>
+          </div>
+          <div id="profile-edit-profile-box" className="profile-edit-box">
+            <span id="profile-edit-profile" className="profile-edit">
+              Edit Profile
+            </span>
+          </div>
+        </div>
+        <div id="badges-box"></div>
+      </div>
     </div>
   );
 }

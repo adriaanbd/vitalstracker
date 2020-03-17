@@ -50,3 +50,32 @@
 #profile-height {
   margin-left: 2px;
 }
+
+#edit-box {
+  height: 25%;
+  width: 100%;
+  background-color: white;
+}
+
+#edit-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-edit-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: #455a65;
+}
+
+#profile-edit-photo-box {
+  border-right: 0.5px solid #e5eaee;
+}
+
+#profile-edit-profile-box {
+  border-left: 0.5px solid #e5eaee;
+}
