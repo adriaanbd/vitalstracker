@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUserTie,
   faInfoCircle,
-  faCogs,
+  faCog,
   faUser,
   faEnvelope,
   faBullseye,
@@ -20,7 +20,7 @@ function Menu() {
         <MenuItem icon={<FontAwesomeIcon icon={faBullseye} />} title={'Your goal'} />
         <MenuItem icon={<FontAwesomeIcon icon={faEnvelope} />} title={'Mailing list'} />
         <MenuItem icon={<FontAwesomeIcon icon={faUser} />} title={'Your profile'} />
-        <MenuItem icon={<FontAwesomeIcon icon={faCogs} />} title={'Settings'} />
+        <MenuItem icon={<FontAwesomeIcon icon={faCog} />} title={'Settings'} />
         <MenuItem icon={<FontAwesomeIcon icon={faInfoCircle} />} title={'Help'} />
       </div>
     </div>
