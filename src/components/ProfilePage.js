@@ -1,7 +1,15 @@
 import React from 'react';
-import HeaderRibbon from './HeaderRibbon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faUserCircle,
+  faTrophy,
+  faStar,
+  faStarOfLife,
+  faShieldAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import HeaderRibbon from './HeaderRibbon';
+import ProfileBadge from './ProfileBadge';
 import './styles/ProfilePage.css';
 import './styles/HeaderRibbon.css';
 
@@ -40,7 +48,31 @@ function ProfilePage(props) {
             </span>
           </div>
         </div>
-        <div id="badges-box"></div>
+        <div id="badges-box">
+          <div id="badges-title-box">
+            <span id="badges-title">
+              Your badges
+            </span>
+          </div>
+          <div id="all-badges-container">
+            <ProfileBadge
+              icon={ <FontAwesomeIcon icon={faTrophy} /> }
+              data={ '100' }
+            />
+            <ProfileBadge
+              icon={ <FontAwesomeIcon icon={faStar} /> }
+              data={ '100' }
+            />
+            <ProfileBadge
+              icon={ <FontAwesomeIcon icon={faStarOfLife} /> }
+              data={ '100' }
+            />
+            <ProfileBadge
+              icon={ <FontAwesomeIcon icon={faShieldAlt} /> }
+              data={ '100' }
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
