@@ -1,9 +1,31 @@
 .ribbon {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #62b5e5;
     color: whitesmoke;
     height: 10%;
-    width: 100vw;
+    width: 100%;
+}
+
+#ribbon-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+}
+
+#ribbon-title-box {
+    width: 70%;
+}
+
+.ribbon-side {
+    width: 30%;
+}
+
+#angle-left {
+    margin-left: 0.4rem;
+}
+
+#angle-left > svg {
+    font-size: 1.5rem;
 }
