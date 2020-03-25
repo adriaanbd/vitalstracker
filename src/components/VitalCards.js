@@ -5,10 +5,10 @@ import {
   faSmile,
   faWeight,
   faThermometerHalf,
-  faAppleAlt
+  faAppleAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import VitalCard from './VitalCard';
-import './styles/VitalsCards.css'
+import './styles/VitalsCards.css';
 
 function VitalCards() {
   // title should come from redux state that gets it from api call
