@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function FooterItem(props) {
   return (
-    <div className="footer-item">
+    <Link to={props.link} className="footer-item">
       <div>{props.icon}</div>
       <div>{props.title}</div>
-    </div>
+    </Link>
   );
 }
 

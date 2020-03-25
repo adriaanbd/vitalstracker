@@ -15,4 +15,6 @@
     align-items: center;
     font-family: Helvetica;
     width: 100%;
+    text-decoration: none;
+    color: inherit;
 }
