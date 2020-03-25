@@ -51,7 +51,7 @@ function VitalCards() {
         id="glucose-card"
       />
     </div>
-  )
+  );
 }
 
 export default VitalCards;
