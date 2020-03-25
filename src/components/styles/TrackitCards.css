@@ -8,14 +8,15 @@
 }
 
 .trackit-day {
+  display: flex;
+  align-items: center;
   background-color: #e5eaee;
   color: #67899c;
-  border-top: 1px solid #67899c;
-  border-bottom: 1px solid #67899c;
-  height: 1.4rem;
+  height: 1.8rem;
   text-align: start;
-  padding: .1rem;
-  padding-left: .5rem;
+  padding-left: .4rem;
+  font-weight: 600;
+  font-size: 0.9em;
 }
 
 .trackit-card {
