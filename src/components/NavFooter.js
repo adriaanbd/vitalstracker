@@ -13,7 +13,7 @@ function NavFooter() {
       <FooterItem
         icon={ <FontAwesomeIcon icon={faPlus} /> }
         title="Measure"
-        link="measurement"
+        link="vitals"
       />
       <FooterItem
         icon={ <FontAwesomeIcon icon={faArrowRight} /> }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/AddVitalCard.css';
+import HeaderRibbon from './HeaderRibbon';
 
 const UNITS = ['LB', 'KG'];
 
@@ -12,29 +13,32 @@ function setUnits() {
 function AddVitalCard(props) {
   const { icon, title, id } = props;
   return (
-    <div className="add-vital-card" id={id}>
-      <div id="vital-card-icon">{ icon }</div>
-      <h1 id="vital-card-title">{ title }</h1>
-      <form id="new-vital-form">
-        <div id="measure-and-unit">
-          <input
-            type="text"
-            name="measure-input"
-            id="measure-input-field"
-            className="measure"
-            placeholder=""
-          />
-          <select
-            id="unit-select"
-            name="unit"
-            className="measure">
-            { setUnits() }
-          </select>
-        </div>
-        <button type="submit" id="add-vital-btn">ADD VITAL</button>
-      </form>
-    </div>
-  )
+    <>
+      <HeaderRibbon title="Add Vital" />
+      <div className="add-vital-card" id={id}>
+        <div id="vital-card-icon">{ icon }</div>
+        <h1 id="vital-card-title">{ title }</h1>
+        <form id="new-vital-form">
+          <div id="measure-and-unit">
+            <input
+              type="text"
+              name="measure-input"
+              id="measure-input-field"
+              className="measure"
+              placeholder=""
+            />
+            <select
+              id="unit-select"
+              name="unit"
+              className="measure">
+              { setUnits() }
+            </select>
+          </div>
+          <button type="submit" id="add-vital-btn">ADD VITAL</button>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default AddVitalCard;
