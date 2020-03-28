@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function VitalCard(props) {
-  const { icon, title, id, path } = props
+  const {
+    icon, title, id, path,
+  } = props;
   return (
     <div className="vital-card" id={id}>
       <div className="vital-card-icon">{ icon }</div>

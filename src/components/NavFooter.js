@@ -1,6 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import VitalCards from './VitalCards';
+import { useRouteMatch } from 'react-router-dom';
 import FooterItem from './FooterItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTachometerAlt, faArrowRight, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
