@@ -24,6 +24,8 @@
 
 #angle-left {
     margin-left: 0.4rem;
+    text-decoration: none;
+    color: inherit;
 }
 
 #angle-left > svg {

@@ -1,19 +1,12 @@
 import React from 'react';
 import './styles/HeaderRibbon.css';
-
-function genIcon(icon, id) {
-  let html;
-  if (icon) {
-    html = <div id={id}>{icon}</div>;
-  }
-  return html;
-}
+import { Link } from 'react-router-dom';
 
 function HeaderRibbon(props) {
   return (
     <div className="ribbon">
       <div className="ribbon-side" id="ribbon-left">
-        {genIcon(props.icon, props.iconTitle)}
+        {props.icon ? <Link to="/menu" id="angle-left">{props.icon}</Link> : ''}
       </div>
       <div id="ribbon-title-box">
         <h1 id="ribbon-title">{props.title ? props.title : 'Track.It'}</h1>
