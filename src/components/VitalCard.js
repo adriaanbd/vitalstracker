@@ -6,9 +6,13 @@ function VitalCard(props) {
     icon, title, id, path,
   } = props;
   return (
-    <div className="vital-card" id={id}>
-      <div className="vital-card-icon">{ icon }</div>
-      <Link to={`/vitals/${path}`} className="vital-card-title">{ title }</Link>
+    <div className="vital-card-wrap">
+      <Link to={`/vitals/${path}`}>
+        <div className="vital-card" id={id}>
+          <div className="vital-card-icon">{ icon }</div>
+          <div className="vital-card-title">{ title }</div>
+        </div>
+      </Link>
     </div>
   );
 }

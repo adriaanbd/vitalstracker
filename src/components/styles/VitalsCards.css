@@ -1,18 +1,15 @@
 .vitals-frame {
-  display: grid;
-  grid-template-rows: 1em 1fr 1em 1fr 1em 1fr 1em;
-  grid-template-columns: minmax(0.5em, 1rem) minmax(150px, 1fr) 1rem minmax(150px, 1fr) minmax(0.5rem, 1rem);
-  grid-template-areas:
-  ". . . . ."
-  ". a . b ."
-  ". . . . ."
-  ". c . d ."
-  ". . . . ."
-  ". e . f ."
-  ". . . . .";
-  margin-left: 1rem;
-  margin-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
   height: 100%;
+  width: 90%;
+}
+
+.vital-card-wrap {
+  flex: 1;
+  margin: 1em;
+  align-self: center;
+  min-width: 35%;
 }
 
 .vital-card {
@@ -31,28 +28,4 @@
   text-decoration: none;
   color: inherit;
   margin-top: 1em;
-}
-
-#systolic-card {
-  grid-area: a;
-}
-
-#diastolic-card {
-  grid-area: b;
-}
-
-#weight-card {
-  grid-area: c;
-}
-
-#mood-card {
-  grid-area: d;
-}
-
-#temperature-card {
-  grid-area: e;
-}
-
-#glucose-card {
-  grid-area: f;
 }
