@@ -7,7 +7,7 @@ function VitalCard(props) {
   } = props;
   return (
     <div className="vital-card-wrap">
-      <Link to={`/vitals/${path}`}>
+      <Link to={`/vitals/${path}`} className='vital-card-link'>
         <div className="vital-card" id={id}>
           <div className="vital-card-icon">{ icon }</div>
           <div className="vital-card-title">{ title }</div>
