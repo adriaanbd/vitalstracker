@@ -2,12 +2,35 @@ import React from 'react';
 import './styles/AddVitalCard.css';
 import Layout from './Layout';
 
-const UNITS = ['LB', 'KG'];
+const UNITS = {
+  weight: ['LB', 'KG'],
+  mood: [
+    'Cheerful',
+    'Reflective',
+    'Humorous',
+    'Calm',
+    'Romantic',
+    'Angry',
+    'Tense',
+    'Fearful',
+    'Lonely',
+    'Happy',
+    'Sad',
+    'Nostalgic',
+    'Melancholic',
+    'Lighthearted',
+    'Whimsical',
+  ],
+  temperature: ['F', 'C'],
+  glucose: ['mmnol/L', 'mg/dL'],
+  systolic: ['mm Hg'],
+  diastolic: ['mm Hg'],
+};
 
-function setUnits() {
+function setUnits(vital) {
   return [
     ...[<option value="" selected disabled hidden>UNIT</option>],
-    ...UNITS.map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
+    ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
 }
 
 function AddVitalCard(props) {
