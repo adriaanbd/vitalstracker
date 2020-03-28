@@ -16,6 +16,7 @@ import './App.css';
 import ProfilePage from './components/ProfilePage';
 import AddVitalCard from './components/AddVitalCard';
 import VitalCards from './components/VitalCards';
+import UnderConstruction from './components/UnderConstruction';
 
 function App() {
   return (
@@ -36,9 +37,13 @@ function App() {
         <Route exact path="/menu">
           <Menu />
         </Route>
-        <Route exact path="/menu/profile">
+        <Route path="/menu/profile">
           <ProfilePage />
         </Route>
+        <Route path="/menu/goal"><UnderConstruction /></Route>
+        <Route path="/menu/mail"><UnderConstruction /></Route>
+        <Route path="/menu/settings"><UnderConstruction /></Route>
+        <Route path="/menu/help"><UnderConstruction /></Route>
         <Route path="/vitals/weight">
           <AddVitalCard
             icon={ <FontAwesomeIcon icon={faWeight} size="3x" /> }
