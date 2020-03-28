@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function MenuItem(props) {
   return (
-    <Link to='/menu/profile'>
+    <Link to={`/menu/${props.relPath}`} className="menu-link">
       <div className="item-frame">
         <div className="menu-icon">
           {props.icon}

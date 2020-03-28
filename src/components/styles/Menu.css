@@ -46,6 +46,11 @@
   background-color: #e5eaee;
 }
 
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .menu-icon {
   margin: 1rem;
 }
