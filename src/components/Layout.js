@@ -5,7 +5,10 @@ import NavFooter from './NavFooter';
 function Layout(props) {
   return (
     <>
-      <HeaderRibbon title={props.title}/>
+      <HeaderRibbon title={props.title}
+                    icon={props.icon}
+                    iconName={props.iconName}
+      />
       {props.children}
       <NavFooter />
     </>
