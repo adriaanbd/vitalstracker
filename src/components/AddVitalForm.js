@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { Select, TextInput, Button } from 'evergreen-ui';
 
 const UNITS = {
   weight: ['LB', 'KG'],
@@ -33,7 +34,7 @@ const DEFAULT_STATE = {
 
 function setUnits(vital) {
   return [
-    ...[<option value="" selected disabled hidden>UNIT</option>],
+    ...[<option value={UNITS[vital][0]} selected disabled hidden>UNIT</option>],
     ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
 }
 
@@ -63,7 +64,7 @@ function AddVitalForm() {
   return (
     <form id="new-vital-form" onSubmit={handleSubmit}>
       <div id="measure-and-unit">
-        <input
+        <TextInput
           type="text"
           name="measure-input"
           id="measure-input-field"
@@ -72,16 +73,18 @@ function AddVitalForm() {
           value={vitalData.value}
           onChange={handleChange}
         />
-        <select
+        <Select
           id="unit-select"
           name="unit"
           className="measure"
           value={vitalData.unit}
-          onChange={handleChange}>
-          { setUnits(relPath(url)) }
-        </select>
+          onChange={handleChange}
+          children={setUnits(relPath(url))}>
+        </Select>
       </div>
-      <button type="submit" id="add-vital-btn">ADD VITAL</button>
+      <button type="submit"
+              id="add-vital-btn">ADD VITAL
+      </button>
       </form>
   );
 }
