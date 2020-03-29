@@ -1,7 +1,7 @@
 import React from 'react';
+import { Icon } from 'evergreen-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faAngleLeft,
   faUserCircle,
   faTrophy,
   faStar,
@@ -16,7 +16,7 @@ function ProfilePage(props) {
   return (
     <div id="profile-page-frame">
       <Layout title='Profile'
-              icon={<FontAwesomeIcon icon={faAngleLeft} size="2x" />}
+              icon={<Icon icon='chevron-left' size='20px' />}
               iconTitle="angle-left">
         <div id="profile-top">
           <div id="profile-avatar-name-gender-box">
