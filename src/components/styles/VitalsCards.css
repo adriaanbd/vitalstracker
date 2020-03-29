@@ -27,6 +27,11 @@
   padding: 1rem;
 }
 
+#vital-card-title-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .vital-card-title {
   font-size: 1em;
   text-align: center;

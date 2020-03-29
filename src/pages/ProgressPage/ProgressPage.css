@@ -1,5 +1,5 @@
 .progress-page-container {
-  height: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   width: 100vw;

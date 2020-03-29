@@ -8,6 +8,9 @@
   width: 100vw;
   background-color: whitesmoke;
 }
+#vital-card-main-wrap {
+  height: 80vh;
+}
 
 #new-vital-form {
   display: flex;
