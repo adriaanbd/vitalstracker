@@ -12,13 +12,15 @@
 #new-vital-form {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  padding: 0.5em;
 }
 
 #measure-and-unit {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
+  height: 2.5rem;
   margin-bottom: 0.25em;
 }
 
@@ -45,11 +47,12 @@
 #add-vital-btn {
   background-color: rgb(173, 220, 145) !important;
   color: white;
-  height: 2rem;
+  height: 2.5rem;
   cursor: pointer;
   border-radius: 3px;
   border: none;
   text-align: center;
+  font-size: 1em;
 }
 
 #unit-select {

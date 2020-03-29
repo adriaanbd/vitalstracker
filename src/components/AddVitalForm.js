@@ -46,6 +46,7 @@ function relPath(url) {
 function AddVitalForm() {
   const { url } = useRouteMatch();
   const [vitalData, setVitalData] = useState(DEFAULT_STATE);
+  const vitalName = relPath(url);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -79,11 +80,11 @@ function AddVitalForm() {
           className="measure"
           value={vitalData.unit}
           onChange={handleChange}
-          children={setUnits(relPath(url))}>
+          children={setUnits(vitalName)}>
         </Select>
       </div>
       <button type="submit"
-              id="add-vital-btn">ADD VITAL
+              id="add-vital-btn">Add {`${vitalName}`}
       </button>
       </form>
   );
