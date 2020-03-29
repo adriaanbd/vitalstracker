@@ -6,6 +6,7 @@
   border: 2px solid #62b5e5;
   padding: 8rem 2rem;
   margin: auto;
+  min-width: 286px;
 }
 
 #new-vital-form {
