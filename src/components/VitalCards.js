@@ -6,10 +6,8 @@ import {
   faWeight,
   faThermometerHalf,
   faAppleAlt,
-  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 import VitalCard from './VitalCard';
-import AddVitalCard from './AddVitalCard';
 import './styles/VitalsCards.css';
 import Layout from './Layout';
 
