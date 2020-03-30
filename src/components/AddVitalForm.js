@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { Select, TextInput } from 'evergreen-ui';
+import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
 import createVital from '../actions/index';
 
@@ -77,30 +77,32 @@ function AddVitalForm() {
   }
 
   return (
-    <form id="new-vital-form" onSubmit={handleSubmit}>
-      <div id="measure-and-unit">
-        <TextInput
-          type="text"
-          name="measureInput"
-          id="measure-input-field"
-          className="measure"
-          placeholder=""
-          value={vitalData.measureInput}
-          onChange={handleChange}
-        />
-        <Select
-          id="unit-select"
-          name="unit"
-          className="measure"
-          value={vitalData.unit}
-          onChange={handleChange}
-          children={setOptions(vitalName)}>
-        </Select>
-      </div>
-      <button type="submit"
-              id="add-vital-btn">Add {`${vitalName}`}
-      </button>
+    <Pane marginLeft={16} marginRight={16} border="default" elevation={1}>
+      <form id="new-vital-form" onSubmit={handleSubmit}>
+        <div id="measure-and-unit">
+          <TextInput
+            type="text"
+            name="measureInput"
+            id="measure-input-field"
+            className="measure"
+            placeholder=""
+            value={vitalData.measureInput}
+            onChange={handleChange}
+          />
+          <Select
+            id="unit-select"
+            name="unit"
+            className="measure"
+            value={vitalData.unit}
+            onChange={handleChange}
+            children={setOptions(vitalName)}>
+          </Select>
+        </div>
+        <button type="submit"
+                id="add-vital-btn">Add {`${vitalName}`}
+        </button>
       </form>
+    </Pane>
   );
 }
 
