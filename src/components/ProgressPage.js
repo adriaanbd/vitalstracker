@@ -1,8 +1,8 @@
 import React from 'react';
-import ProgressPageHeader from '../../components/ProgressPageHeader';
-import ProgressPageTiles from '../../components/ProgressPageTiles';
-import './ProgressPage.css';
-import Layout from '../../components/Layout';
+import ProgressPageHeader from './ProgressPageHeader';
+import ProgressPageTiles from './ProgressPageTiles';
+import './styles/ProgressPage.css';
+import Layout from './Layout';
 
 function ProgressPage() {
   return (

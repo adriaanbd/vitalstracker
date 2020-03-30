@@ -11,7 +11,7 @@ import {
 import {Switch, Route} from 'react-router-dom';
 import Menu from './components/Menu';
 import TrackitCards from './components/TrackitCards';
-import ProgressPage from './pages/ProgressPage/ProgressPage';
+import ProgressPage from './components/ProgressPage';
 import './App.css';
 import ProfilePage from './components/ProfilePage';
 import AddVitalCard from './components/AddVitalCard';
