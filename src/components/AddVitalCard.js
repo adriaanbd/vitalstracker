@@ -27,6 +27,8 @@ function AddVitalCard(props) {
                 alignItems="center"
                 height="100%"
                 width="100vw"
+                paddingLeft={16}
+                paddingRight={16}
                 backgroundColor="whitesmoke"
           >
             <Text id="vital-card-icon">{ icon }</Text>
