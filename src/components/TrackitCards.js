@@ -1,4 +1,5 @@
 import React from 'react';
+import { Pane } from 'evergreen-ui';
 import TrackitCard from './TrackitCard';
 import './styles/TrackitCards.css';
 import Layout from './Layout';
@@ -9,20 +10,17 @@ function TrackitCards() {
   return (
     <>
       <Layout>
-        <div id="trackit-container">
-          <div className="trackit-day-and-card">
-            <div className="trackit-day" id="today">Today</div>
-            <TrackitCard />
-          </div>
-          <div className="trackit-day-and-card">
-            <div className="trackit-day" id="yesterday">Yesterday</div>
-            <TrackitCard />
-          </div>
-          <div className="trackit-day-and-card">
-            <div className="trackit-day" id="last-week">Last Week</div>
-            <TrackitCard />
-          </div>
-        </div>
+        <Pane width="100vw" height="80vh">
+          <TrackitCard day='Today' />
+          <TrackitCard />
+          <TrackitCard day='Yesterday' />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard day='Last Week' />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard />
+        </Pane>
       </Layout>
     </>
   );
