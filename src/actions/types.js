@@ -1,0 +1,2 @@
+export const CREATE_VITAL = 'CREATE_VITAL';
+export const CHANGE_FILTER = 'CHANGE_FILTER';

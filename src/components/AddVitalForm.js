@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { Select, TextInput, Button } from 'evergreen-ui';
+import { Select, TextInput } from 'evergreen-ui';
+import { useDispatch } from 'react-redux';
+import { createVital } from '../actions/index';
 
 const UNITS = {
   weight: ['LB', 'KG'],
@@ -46,10 +48,12 @@ function relPath(url) {
 function AddVitalForm() {
   const { url } = useRouteMatch();
   const [vitalData, setVitalData] = useState(DEFAULT_STATE);
+  const dispatch = useDispatch();
   const vitalName = relPath(url);
 
   function handleChange(event) {
     const { name, value } = event.target;
+    console.log(name, value);
     setVitalData(prevVitalData => ({
       ...prevVitalData,
       [name]: value,
@@ -59,6 +63,8 @@ function AddVitalForm() {
   function handleSubmit(event) {
     event.preventDefault();
     // here we make a post to the api endpoint to save result
+    console.log('about to dispatch create vital action', vitalData);
+    dispatch(createVital({ ...vitalData }));
     setVitalData(DEFAULT_STATE);
   }
 
@@ -67,11 +73,11 @@ function AddVitalForm() {
       <div id="measure-and-unit">
         <TextInput
           type="text"
-          name="measure-input"
+          name="measureInput"
           id="measure-input-field"
           className="measure"
           placeholder=""
-          value={vitalData.value}
+          value={vitalData.measureInput}
           onChange={handleChange}
         />
         <Select
