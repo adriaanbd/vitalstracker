@@ -1,17 +1,3 @@
-.add-vital-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  padding: 0 2em;
-  height: 100%;
-  width: 100vw;
-  background-color: whitesmoke;
-}
-#vital-card-main-wrap {
-  height: 80vh;
-}
-
 #new-vital-form {
   display: flex;
   flex-direction: column;

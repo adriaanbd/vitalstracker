@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/AddVitalCard.css';
 import Layout from './Layout';
 import AddVitalForm from './AddVitalForm';
+import { Pane, Heading, Text } from 'evergreen-ui';
 
 function AddVitalCard(props) {
   const { icon, title, id } = props;
@@ -9,15 +10,29 @@ function AddVitalCard(props) {
   return (
     <>
       <Layout title="Add Vital">
-        <div id="vital-card-main-wrap">
-          <div id="vital-card-title-wrap">
-            <h1 id="vital-card-title">{ title }</h1>
-          </div>
-          <div className="add-vital-card" id={id}>
-            <div id="vital-card-icon">{ icon }</div>
+        <Pane height="80%">
+          <Pane>
+          <Heading color="#67899C"
+                   fontWeight={600}
+                   textAlign="center"
+                   padding={16}
+          >
+          { title }
+          </Heading>
+          </Pane>
+          <Pane display="flex"
+                id={id}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                height="100%"
+                width="100vw"
+                backgroundColor="whitesmoke"
+          >
+            <Text id="vital-card-icon">{ icon }</Text>
             <AddVitalForm />
-          </div>
-        </div>
+          </Pane>
+        </Pane>
       </Layout>
     </>
   );
