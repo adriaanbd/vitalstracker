@@ -10,7 +10,7 @@ function TrackitCards() {
   return (
     <>
       <Layout>
-        <Pane width="100vw">
+        <Pane width="100vw" height="80%">
           <TrackitCard day='Today' />
           <TrackitCard />
           <TrackitCard day='Yesterday' />
