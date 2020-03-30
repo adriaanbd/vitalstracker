@@ -10,13 +10,14 @@ import {
 import VitalCard from './VitalCard';
 import './styles/VitalsCards.css';
 import Layout from './Layout';
+import { Pane } from 'evergreen-ui';
 
 function VitalCards(props) {
   // title should come from redux state that gets it from api call
   return (
     <>
       <Layout title={props.title}>
-        <div className="vitals-frame">
+        <Pane display="flex" flexWrap="wrap" height="80%" width="90%">
           <VitalCard
             icon={ <FontAwesomeIcon icon={faHeartbeat} size="3x" /> }
             title='Systolic Pressure'
@@ -59,7 +60,7 @@ function VitalCards(props) {
             id='glucose-card'
             path='glucose'
           />
-        </div>
+        </Pane>
       </Layout>
     </>
   );
