@@ -30,7 +30,7 @@ function TrackitCard(props) {
     <>
       {setHeader(props.day)}
       <Pane display="flex"
-            justifyContent="space-between"
+            justifyContent="space-evenly"
             padding={16}
             marginLeft={8}
             marginRight={8}

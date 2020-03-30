@@ -10,14 +10,12 @@ function TrackitCards() {
   return (
     <>
       <Layout>
-        <Pane width="100vw" height="80vh">
+        <Pane width="100vw">
           <TrackitCard day='Today' />
           <TrackitCard />
           <TrackitCard day='Yesterday' />
           <TrackitCard />
-          <TrackitCard />
           <TrackitCard day='Last Week' />
-          <TrackitCard />
           <TrackitCard />
           <TrackitCard />
         </Pane>
