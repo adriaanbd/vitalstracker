@@ -4,7 +4,7 @@ import {
 
 
 const INIT_STATE = {
-  vitals: {},
+  vitals: [],
   loading: false,
   error: null,
 };
@@ -13,10 +13,9 @@ function vitals(state = INIT_STATE, action) {
   const { type, payload } = action;
   switch (type) {
     case CREATE_VITAL:
-      console.log('inside vitals, state is:', state);
-      console.log('inside vitals, payload is:', payload);
       return {
-        ...state, ...payload,
+        ...state,
+        vitals: [...state.vitals, payload],
       };
     default:
       return state;

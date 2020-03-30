@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { Select, TextInput } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
-import { createVital } from '../actions/index';
+import createVital from '../actions/index';
 
 const UNITS = {
   weight: ['LB', 'KG'],
@@ -30,15 +30,11 @@ const UNITS = {
 };
 
 const DEFAULT_STATE = {
+  category: '',
   measureInput: '',
   unit: '',
 };
 
-function setUnits(vital) {
-  return [
-    ...[<option value={UNITS[vital][0]} selected disabled hidden>UNIT</option>],
-    ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
-}
 
 function relPath(url) {
   const arr = url.split('/');
@@ -53,7 +49,6 @@ function AddVitalForm() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    console.log(name, value);
     setVitalData(prevVitalData => ({
       ...prevVitalData,
       [name]: value,
@@ -63,9 +58,22 @@ function AddVitalForm() {
   function handleSubmit(event) {
     event.preventDefault();
     // here we make a post to the api endpoint to save result
-    console.log('about to dispatch create vital action', vitalData);
-    dispatch(createVital({ ...vitalData }));
+    if (!vitalData.unit) {
+      dispatch(createVital({
+        ...vitalData,
+        unit: UNITS[vitalName][0],
+        category: vitalName,
+      }));
+    } else {
+      dispatch(createVital({ ...vitalData, category: vitalName }));
+    }
     setVitalData(DEFAULT_STATE);
+  }
+
+  function setOptions(vital) {
+    return [
+      ...[<option value={UNITS[vital][0]} disabled hidden>UNIT</option>],
+      ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
   }
 
   return (
@@ -86,7 +94,7 @@ function AddVitalForm() {
           className="measure"
           value={vitalData.unit}
           onChange={handleChange}
-          children={setUnits(vitalName)}>
+          children={setOptions(vitalName)}>
         </Select>
       </div>
       <button type="submit"
