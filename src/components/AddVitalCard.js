@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles/AddVitalCard.css';
 import Layout from './Layout';
 import AddVitalForm from './AddVitalForm';

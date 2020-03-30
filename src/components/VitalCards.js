@@ -7,10 +7,10 @@ import {
   faThermometerHalf,
   faAppleAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import { Pane } from 'evergreen-ui';
 import VitalCard from './VitalCard';
 import './styles/VitalsCards.css';
 import Layout from './Layout';
-import { Pane } from 'evergreen-ui';
 
 function VitalCards(props) {
   // title should come from redux state that gets it from api call
