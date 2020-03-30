@@ -14,12 +14,20 @@ function TrackitCards() {
               flexDirection="column"
               width="100vw"
               height="80%"
+              overflow="auto"
+              min-height={0}
         >
           <TrackitCard day='Today' />
           <TrackitCard />
           <TrackitCard day='Yesterday' />
           <TrackitCard />
           <TrackitCard day='Last Week' />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard />
+          <TrackitCard />
           <TrackitCard />
           <TrackitCard />
         </Pane>

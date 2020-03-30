@@ -7,16 +7,16 @@ function setHeader(day) {
   if (day) {
     return (
       <Pane display="flex"
-                    padding={16}
+                    padding={8}
                     background="tint2"
                     alignItems="center"
                     elevation={1}
                     border="default"
       >
-        <Heading size={600}
+        <Heading size={500}
                  paddingLeft={16}
                  color="#67899C"
-                 fontWeight={500}>
+                 fontWeight={600}>
           {day}
         </Heading>
       </Pane>
@@ -33,9 +33,9 @@ function TrackitCard(props) {
       {setHeader(props.day)}
       <Pane display="flex"
             justifyContent="space-evenly"
-            padding={16}
-            marginLeft={8}
-            marginRight={8}
+            padding={0}
+            marginTop={12}
+            marginBottom={12}
             color="#67899C">
           <div className="trackit-icon">Icon</div>
           <div>1 Jan 2020</div>
