@@ -10,6 +10,8 @@ function setHeader(day) {
                     padding={16}
                     background="tint2"
                     alignItems="center"
+                    elevation={1}
+                    border="default"
       >
         <Heading size={600}
                  paddingLeft={16}

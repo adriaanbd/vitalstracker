@@ -10,7 +10,11 @@ function TrackitCards() {
   return (
     <>
       <Layout>
-        <Pane width="100vw" height="80%">
+        <Pane display="flex"
+              flexDirection="column"
+              width="100vw"
+              height="80%"
+        >
           <TrackitCard day='Today' />
           <TrackitCard />
           <TrackitCard day='Yesterday' />
