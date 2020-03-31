@@ -1,10 +1,11 @@
 import React from 'react';
 import HeaderRibbon from './HeaderRibbon';
-import { Pane, Card, Text } from 'evergreen-ui';
+import { Pane, Card, TextInput } from 'evergreen-ui';
+import './styles/LoginPage.css';
 
 function LoginPage() {
   function handleSubmit() {
-    return '';
+    alert('Button was clicked!');
   }
 
   function handleChange() {
@@ -22,19 +23,29 @@ function LoginPage() {
             backgroundColor="whitesmoke">
         <Card border="default"
               elevation={1}
-              padding="8em"
-              backgroundColor="white">
-          <form onSubmit={handleSubmit}>
+              width="80%"
+              backgroundColor="white"
+              display="flex"
+              flexDirection="column"
+              justifyContent="center">
+          <Pane paddingLeft="2em"
+                paddingRight="2em"
+                paddingTop="4em"
+                paddingBottom="4em">
             <TextInput
               type="text"
               name="email"
               id="email-input"
-              placeholder="Your email"
-              value={userData.email}
+              placeholder="Email or Username"
+              height="2.5em"
+              marginBottom={1}
+              padding={8}
               onChange={handleChange}
             />
-          </form>
-          <Text>Login Page</Text>
+            <button onClick={handleSubmit} id="login" type="submit">
+              Login or Signup
+            </button>
+          </Pane>
         </Card>
       </Pane>
     </>
