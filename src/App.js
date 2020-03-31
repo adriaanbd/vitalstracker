@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import {Switch, Route} from 'react-router-dom';
+import LoginPage from './components/LoginPage';
 import Menu from './components/Menu';
 import TrackitCards from './components/TrackitCards';
 import ProgressPage from './components/ProgressPage';
@@ -23,7 +24,7 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <VitalCards />
+          <LoginPage />
         </Route>
         <Route exact path="/vitals">
           <VitalCards title='Vitals'/>
