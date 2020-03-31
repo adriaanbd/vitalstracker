@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderRibbon from './HeaderRibbon';
 import { Pane, Card, TextInput } from 'evergreen-ui';
 import './styles/LoginPage.css';
 
-function LoginPage() {
-  function handleSubmit() {
-    alert('Button was clicked!');
+const DEFAULT_STATE = {
+  username: '',
+};
+
+function LoginPage(props) {
+  const [userData, setUserData] = useState(DEFAULT_STATE);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setUserData(prevUserData => ({
+      ...prevUserData,
+      [name]: value,
+    }));
   }
 
-  function handleChange() {
-    return '';
+  function handleSubmit(event) {
+    alert('Button was clicked!');
   }
 
   return (
@@ -34,9 +44,10 @@ function LoginPage() {
                 paddingBottom="4em">
             <TextInput
               type="text"
-              name="email"
+              name="username"
               id="email-input"
-              placeholder="Email or Username"
+              placeholder="Username"
+              value={userData.username}
               height="2.5em"
               marginBottom={1}
               padding={8}
