@@ -18,8 +18,8 @@ function Menu() {
     <Layout title='More'>
       <div className="menu-frame">
         <MenuHeader avatar={<FontAwesomeIcon icon={faUserTie} size="2x"/>}
-                    name={'John Doe'}
-                    gender={'Male'}
+                    name={localStorage.username}
+                    gender={'Gender'}
         />
         <div className="menu-items-frame">
           <MenuItem icon={<FontAwesomeIcon icon={faBullseye} />}

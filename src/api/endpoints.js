@@ -1,2 +1,2 @@
-export const loginEndpoint = 'http://127.0.0.1:8000/v1/sessions/';
-export const usersEndpoint = 'http://127.0.0.1:8000/v1/users/';
+export const loginEndpoint = 'https://lychee-cake-00846.herokuapp.com/v1/sessions/';
+export const usersEndpoint = 'https://lychee-cake-00846.herokuapp.com/v1/users/';
