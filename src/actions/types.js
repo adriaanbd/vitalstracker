@@ -1,4 +1,5 @@
 export const CREATE_VITAL = 'CREATE_VITAL';
+export const LOAD_VITALS = 'LOAD_VITALS';
 export const CREATE_USER = 'CREATE_USER';
 export const LOGIN_USER_BEGIN = 'LOGIN_USER_BEGIN';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';

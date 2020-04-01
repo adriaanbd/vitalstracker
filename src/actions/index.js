@@ -1,5 +1,6 @@
 import {
   CREATE_VITAL,
+  LOAD_VITALS,
   LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
@@ -9,6 +10,13 @@ export default function createVital(vital) {
   return {
     type: CREATE_VITAL,
     payload: vital,
+  };
+}
+
+export function loadVitals(vitals) {
+  return {
+    type: LOAD_VITALS,
+    payload: vitals,
   };
 }
 

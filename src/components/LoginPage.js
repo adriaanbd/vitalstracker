@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { Pane, Card, TextInput } from 'evergreen-ui';
 import { loginEndpoint } from '../api/endpoints';
-import { loginUserSuccess, loginUserBegin, loginUserFailure } from '../actions/index';
+import { loginUserSuccess } from '../actions/index';
 import HeaderRibbon from './HeaderRibbon';
 import './styles/LoginPage.css';
 
@@ -27,7 +27,7 @@ function LoginPage(props) {
         // dispatch(loginUserBegin());
         const resp = await axios.post(loginEndpoint, { ...userData });
         if (resp.status === 201) {
-          await dispatch(loginUserSuccess(resp.data));
+          dispatch(loginUserSuccess(resp.data));
           localStorage.setItem('username', resp.data.username);
           localStorage.setItem('user_id', resp.data.id);
         }

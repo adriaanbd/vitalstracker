@@ -50,8 +50,6 @@ function AddVitalForm() {
   const dispatch = useDispatch();
   const vitalName = relPath(url);
 
-
-
   function handleChange(event) {
     const { name, value } = event.target;
     setVitalData(prevVitalData => ({

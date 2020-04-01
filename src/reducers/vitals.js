@@ -1,5 +1,6 @@
 import {
   CREATE_VITAL,
+  LOAD_VITALS,
 } from '../actions/types';
 
 
@@ -16,6 +17,10 @@ function vitals(state = INIT_STATE, action) {
       return {
         ...state,
         vitals: [...state.vitals, payload],
+      };
+    case LOAD_VITALS:
+      return {
+        vitals: payload,
       };
     default:
       return state;

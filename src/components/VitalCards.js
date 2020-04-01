@@ -11,8 +11,11 @@ import { Pane } from 'evergreen-ui';
 import VitalCard from './VitalCard';
 import './styles/VitalsCards.css';
 import Layout from './Layout';
+import { useSelector } from 'react-redux';
 
 function VitalCards(props) {
+  const { vitals } = useSelector(state => state);
+  console.log(vitals);
   // title should come from redux state that gets it from api call
   return (
     <>
