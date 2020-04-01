@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, useHistory, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
-import { vitalsEndpoint } from '../api/endpoints';
+import { usersEndpoint } from '../api/endpoints';
 import createVital from '../actions/index';
 
 const UNITS = {
@@ -48,6 +48,7 @@ function AddVitalForm() {
   const { url } = useRouteMatch();
   const [vitalData, setVitalData] = useState(DEFAULT_STATE);
   const dispatch = useDispatch();
+  const history = useHistory();
   const vitalName = relPath(url);
 
   function handleChange(event) {
@@ -76,13 +77,13 @@ function AddVitalForm() {
 
       (async () => {
         try {
-          // dispatch(loginUserBegin());
-          const resp = await axios.post(vitalsEndpoint, { ...data });
+          const resp = await axios.post(`${usersEndpoint}${localStorage.user_id}$/vitals`, { ...data });
           if (resp.status === 201) {
-            await dispatch(createVital(resp.data));
+            dispatch(createVital(resp.data));
+            history.push('/vitals');
           }
         } catch (error) {
-          // dispatch(loginUserFailure(error));
+          //
         }
       })();
     } else {

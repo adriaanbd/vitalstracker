@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pane, Heading } from 'evergreen-ui';
+import { Pane, Heading, Text } from 'evergreen-ui';
 
 import './styles/TrackitCard.css';
 
@@ -37,9 +37,9 @@ function TrackitCard(props) {
             marginTop={12}
             marginBottom={12}
             color="#67899C">
-          <div className="trackit-icon">Icon</div>
-          <div>1 Jan 2020</div>
-          <div className="trackit-mainmeasure">135 LBS</div>
+          <Text className="trackit-category">{props.category}</Text>
+          <Text>{props.date}</Text>
+          <Text className="trackit-mainmeasure">{props.measure}</Text>
       </Pane>
     </>
   );

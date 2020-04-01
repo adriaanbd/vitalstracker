@@ -1,7 +1,6 @@
 import {
-  LOGIN_USER_BEGIN,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
+  CREATE_USER
 } from '../actions/types';
 
 const initialState = {
@@ -13,25 +12,16 @@ const initialState = {
 export default function users(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case LOGIN_USER_BEGIN:
-      return {
-        ...state,
-        loading: true,
-        error: null,
-      };
     case LOGIN_USER_SUCCESS:
       return {
         user: payload,
         loading: false,
         error: null,
       };
-    case LOGIN_USER_FAILURE:
+    case CREATE_USER:
       return {
-        ...state,
-        loading: false,
-        error: payload.error,
+        user: payload,
       };
-
     default:
       return state;
   }

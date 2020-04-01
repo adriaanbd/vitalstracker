@@ -1,9 +1,8 @@
 import {
   CREATE_VITAL,
-  LOAD_VITALS,
-  LOGIN_USER_BEGIN,
+  FETCH_VITALS,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
+  CREATE_USER,
 } from './types';
 
 export default function createVital(vital) {
@@ -13,18 +12,13 @@ export default function createVital(vital) {
   };
 }
 
-export function loadVitals(vitals) {
+export function fetchVitals(vitals) {
   return {
-    type: LOAD_VITALS,
+    type: FETCH_VITALS,
     payload: vitals,
   };
 }
 
-export function loginUserBegin() {
-  return {
-    type: LOGIN_USER_BEGIN,
-  };
-}
 
 export function loginUserSuccess(user) {
   return {
@@ -33,9 +27,9 @@ export function loginUserSuccess(user) {
   };
 }
 
-export function loginUserFailure(error) {
+export function createUser(user) {
   return {
-    type: LOGIN_USER_FAILURE,
-    payload: error,
+    type: CREATE_USER,
+    payload: user,
   };
 }

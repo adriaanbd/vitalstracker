@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'
 import { Pane, Card, TextInput } from 'evergreen-ui';
-import { loginEndpoint } from '../api/endpoints';
-import { loginUserSuccess } from '../actions/index';
+import { loginEndpoint, usersEndpoint } from '../api/endpoints';
+import { loginUserSuccess, createUser } from '../actions/index';
 import HeaderRibbon from './HeaderRibbon';
 import './styles/LoginPage.css';
 
@@ -14,6 +15,7 @@ const DEFAULT_STATE = {
 function LoginPage(props) {
   const [userData, setUserData] = useState(DEFAULT_STATE);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -22,17 +24,22 @@ function LoginPage(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const { target } = event;
+    let resp;
     (async () => {
       try {
-        // dispatch(loginUserBegin());
-        const resp = await axios.post(loginEndpoint, { ...userData });
-        if (resp.status === 201) {
+        if (target.id === 'signup') {
+          resp = await axios.post(usersEndpoint, { ...userData });
+          dispatch(createUser(resp.data));
+        } else {
+          resp = await axios.post(loginEndpoint, { ...userData });
           dispatch(loginUserSuccess(resp.data));
-          localStorage.setItem('username', resp.data.username);
-          localStorage.setItem('user_id', resp.data.id);
         }
+        localStorage.setItem('username', resp.data.username);
+        localStorage.setItem('user_id', resp.data.id);
+        history.push('/vitals');
       } catch (error) {
-        // dispatch(loginUserFailure(error));
+        //
       }
     })();
     setUserData(DEFAULT_STATE);

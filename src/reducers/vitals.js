@@ -1,6 +1,6 @@
 import {
   CREATE_VITAL,
-  LOAD_VITALS,
+  FETCH_VITALS,
 } from '../actions/types';
 
 
@@ -18,7 +18,7 @@ function vitals(state = INIT_STATE, action) {
         ...state,
         vitals: [...state.vitals, payload],
       };
-    case LOAD_VITALS:
+    case FETCH_VITALS:
       return {
         vitals: payload,
       };
