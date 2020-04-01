@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import HeaderRibbon from './HeaderRibbon';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { Pane, Card, TextInput } from 'evergreen-ui';
+import { loginEndpoint } from '../api/endpoints';
+import { loginUserSuccess, loginUserBegin, loginUserFailure } from '../actions/index';
+import HeaderRibbon from './HeaderRibbon';
 import './styles/LoginPage.css';
 
 const DEFAULT_STATE = {
@@ -9,17 +13,29 @@ const DEFAULT_STATE = {
 
 function LoginPage(props) {
   const [userData, setUserData] = useState(DEFAULT_STATE);
+  const dispatch = useDispatch();
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setUserData(prevUserData => ({
-      ...prevUserData,
-      [name]: value,
-    }));
+    setUserData({ [name]: value });
   }
 
   function handleSubmit(event) {
-    alert('Button was clicked!');
+    event.preventDefault();
+    (async () => {
+      try {
+        dispatch(loginUserBegin());
+        const resp = await axios.post(loginEndpoint, { ...userData });
+        if (resp.status === 201) {
+          dispatch(loginUserSuccess({ ...resp.data }));
+          alert('Username exists!', resp.data);
+        }
+      } catch (error) {
+        dispatch(loginUserFailure(error));
+        alert(error);
+      }
+    })();
+    setUserData(DEFAULT_STATE);
   }
 
   return (
