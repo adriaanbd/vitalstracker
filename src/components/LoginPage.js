@@ -29,12 +29,13 @@ function LoginPage(props) {
         if (resp.status === 201) {
           await dispatch(loginUserSuccess(resp.data));
           localStorage.setItem('username', resp.data.username);
+          localStorage.setItem('user_id', resp.data.id);
         }
       } catch (error) {
         // dispatch(loginUserFailure(error));
       }
     })();
-    // setUserData(DEFAULT_STATE);
+    setUserData(DEFAULT_STATE);
   }
 
   return (

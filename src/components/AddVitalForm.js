@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import axios from 'axios';
 import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
+import { vitalsEndpoint } from '../api/endpoints';
 import createVital from '../actions/index';
 
 const UNITS = {
@@ -41,11 +43,14 @@ function relPath(url) {
   return arr[arr.length - 1];
 }
 
+
 function AddVitalForm() {
   const { url } = useRouteMatch();
   const [vitalData, setVitalData] = useState(DEFAULT_STATE);
   const dispatch = useDispatch();
   const vitalName = relPath(url);
+
+
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -59,11 +64,29 @@ function AddVitalForm() {
     event.preventDefault();
     // here we make a post to the api endpoint to save result
     if (!vitalData.unit) {
-      dispatch(createVital({
-        ...vitalData,
-        unit: UNITS[vitalName][0],
+      let measureStr;
+      if (vitalData.measureInput === 'mood') {
+        measureStr = `${UNITS[vitalName][0]}`;
+      } else {
+        measureStr = `${vitalData.measureInput} ${UNITS[vitalName][0]}`;
+      }
+      const data = {
+        measure: measureStr,
         category: vitalName,
-      }));
+        user_id: localStorage.getItem('user_id'),
+      };
+
+      (async () => {
+        try {
+          // dispatch(loginUserBegin());
+          const resp = await axios.post(vitalsEndpoint, { ...data });
+          if (resp.status === 201) {
+            await dispatch(createVital(resp.data));
+          }
+        } catch (error) {
+          // dispatch(loginUserFailure(error));
+        }
+      })();
     } else {
       dispatch(createVital({ ...vitalData, category: vitalName }));
     }
@@ -76,27 +99,47 @@ function AddVitalForm() {
       ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
   }
 
+  function htmlForm(vitalName) {
+    if (vitalName === 'mood') {
+      return (
+        <Select
+          id="unit-select"
+          name="unit"
+          className="measure"
+          value={vitalData.unit}
+          onChange={handleChange}
+          children={setOptions(vitalName)}>
+        </Select>
+      );
+    }
+    return (
+      <>
+        <TextInput
+          type="text"
+          name="measureInput"
+          id="measure-input-field"
+          className="measure"
+          placeholder=""
+          value={vitalData.measureInput}
+          onChange={handleChange}
+          required={true}
+        />
+        <Select
+          id="unit-select"
+          name="unit"
+          className="measure"
+          value={vitalData.unit}
+          onChange={handleChange}
+          children={setOptions(vitalName)}>
+        </Select>
+      </>
+    );
+  }
   return (
     <Pane marginLeft={16} marginRight={16} border="default" elevation={1}>
       <form id="new-vital-form" onSubmit={handleSubmit}>
         <div id="measure-and-unit">
-          <TextInput
-            type="text"
-            name="measureInput"
-            id="measure-input-field"
-            className="measure"
-            placeholder=""
-            value={vitalData.measureInput}
-            onChange={handleChange}
-          />
-          <Select
-            id="unit-select"
-            name="unit"
-            className="measure"
-            value={vitalData.unit}
-            onChange={handleChange}
-            children={setOptions(vitalName)}>
-          </Select>
+          {htmlForm(vitalName)}
         </div>
         <button type="submit"
                 id="add-vital-btn">Add {`${vitalName}`}
