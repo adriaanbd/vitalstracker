@@ -1,5 +1,5 @@
-#login {
-  background-color: rgb(173, 220, 145);
+.auth-btn {
+  background-color: #62b5e5;
   color: white;
   height: 2.5rem;
   cursor: pointer;
@@ -7,5 +7,6 @@
   border: none;
   text-align: center;
   font-size: 1em;
-  width: 99%;
-}
+  width: 100%;
+  margin-top: 0.1em;
+};

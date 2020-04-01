@@ -24,18 +24,17 @@ function LoginPage(props) {
     event.preventDefault();
     (async () => {
       try {
-        dispatch(loginUserBegin());
+        // dispatch(loginUserBegin());
         const resp = await axios.post(loginEndpoint, { ...userData });
         if (resp.status === 201) {
-          dispatch(loginUserSuccess({ ...resp.data }));
-          alert('Username exists!', resp.data);
+          await dispatch(loginUserSuccess(resp.data));
+          localStorage.setItem('username', resp.data.username);
         }
       } catch (error) {
-        dispatch(loginUserFailure(error));
-        alert(error);
+        // dispatch(loginUserFailure(error));
       }
     })();
-    setUserData(DEFAULT_STATE);
+    // setUserData(DEFAULT_STATE);
   }
 
   return (
@@ -65,12 +64,21 @@ function LoginPage(props) {
               placeholder="Username"
               value={userData.username}
               height="2.5em"
-              marginBottom={1}
               padding={8}
+              width="100%"
               onChange={handleChange}
             />
-            <button onClick={handleSubmit} id="login" type="submit">
-              Login or Signup
+            <button onClick={handleSubmit}
+                    id="login"
+                    className="auth-btn"
+                    type="submit">
+              Login
+            </button>
+            <button onClick={handleSubmit}
+                    id="signup"
+                    className="auth-btn"
+                    type="submit">
+              Signup
             </button>
           </Pane>
         </Card>
