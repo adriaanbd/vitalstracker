@@ -1,11 +1,14 @@
 import axios from 'axios';
-import { loginEndpoint } from './endpoints';
-import { loginUserSuccess, loginUserBegin, loginUserFailure } from '../store/actions/index';
 
-const BASE_URL = 'https://lychee-cake-00846.herokuapp.com/';
+const HEROKU_BASE_URL = 'http://lychee-cake-00846.herokuapp.com';
+const LOCAL_BASE_URL = 'http://127.0.0.1:8000';
 
-// send request function => args: method, path and data
 export default async function sendRequest(method, path, data) {
-  const resp = await axios[method](`${BASE_URL}/${path}`, { ...data });
-  return resp;
+  const url = `${LOCAL_BASE_URL}/${path}`;
+  try {
+    const resp = await axios[method](url, { ...data });
+    return resp;
+  } catch (error) {
+    return error;
+  }
 }
