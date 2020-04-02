@@ -1,7 +1,7 @@
 import {
   CREATE_VITAL,
   SET_VITALS,
-  LOGIN_USER_SUCCESS,
+  SET_CURRENT_USER,
   CREATE_USER,
 } from './types';
 
@@ -20,14 +20,14 @@ export function setVitals(vitals) {
 }
 
 
-export function loginUserSuccess(user) {
+export function setCurrentUser(user) {
   return {
-    type: LOGIN_USER_SUCCESS,
+    type: SET_CURRENT_USER,
     payload: user,
   };
 }
 
-export function createUser(user) {
+export function createUserAction(user) {
   return {
     type: CREATE_USER,
     payload: user,

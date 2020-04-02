@@ -1,6 +1,3 @@
-// import actions
-// import api call
-
 import sendRequest from '../../api/calls';
 import { setVitals } from '../actions';
 

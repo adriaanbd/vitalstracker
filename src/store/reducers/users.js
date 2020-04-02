@@ -1,6 +1,6 @@
 import {
-  LOGIN_USER_SUCCESS,
-  CREATE_USER
+  SET_CURRENT_USER,
+  CREATE_USER,
 } from '../actions/types';
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
 export default function users(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case LOGIN_USER_SUCCESS:
+    case SET_CURRENT_USER:
       return {
         user: payload,
         loading: false,

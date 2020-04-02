@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { Pane, Card, TextInput } from 'evergreen-ui';
-import { loginEndpoint, usersEndpoint } from '../api/endpoints';
-import { loginUserSuccess, createUser } from '../store/actions/index';
+import { createUser, fetchUser } from '../store/thunks/users';
 import HeaderRibbon from './HeaderRibbon';
 import './styles/LoginPage.css';
 
@@ -25,23 +23,12 @@ function LoginPage(props) {
   function handleSubmit(event) {
     event.preventDefault();
     const { target } = event;
-    let resp;
-    (async () => {
-      try {
-        if (target.id === 'signup') {
-          resp = await axios.post(usersEndpoint, { ...userData });
-          dispatch(createUser(resp.data));
-        } else {
-          resp = await axios.post(loginEndpoint, { ...userData });
-          dispatch(loginUserSuccess(resp.data));
-        }
-        localStorage.setItem('username', resp.data.username);
-        localStorage.setItem('user_id', resp.data.id);
-        history.push('/vitals');
-      } catch (error) {
-        //
-      }
-    })();
+    if (target.id === 'signup') {
+      dispatch(createUser(userData));
+    } else {
+      dispatch(fetchUser(userData));
+    }
+    history.push('/vitals');
     setUserData(DEFAULT_STATE);
   }
 
