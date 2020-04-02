@@ -1,6 +1,6 @@
 import {
   CREATE_VITAL,
-  FETCH_VITALS,
+  SET_VITALS,
   LOGIN_USER_SUCCESS,
   CREATE_USER,
 } from './types';
@@ -12,9 +12,9 @@ export default function createVital(vital) {
   };
 }
 
-export function fetchVitals(vitals) {
+export function setVitals(vitals) {
   return {
-    type: FETCH_VITALS,
+    type: SET_VITALS,
     payload: vitals,
   };
 }

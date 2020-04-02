@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom'
 import { Pane, Card, TextInput } from 'evergreen-ui';
 import { loginEndpoint, usersEndpoint } from '../api/endpoints';
-import { loginUserSuccess, createUser } from '../actions/index';
+import { loginUserSuccess, createUser } from '../store/actions/index';
 import HeaderRibbon from './HeaderRibbon';
 import './styles/LoginPage.css';
 

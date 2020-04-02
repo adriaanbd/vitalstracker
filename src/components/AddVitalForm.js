@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
 import { usersEndpoint } from '../api/endpoints';
-import createVital from '../actions/index';
+import createVital from '../store/actions/index';
 
 const UNITS = {
   weight: ['LB', 'KG'],

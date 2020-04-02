@@ -9,6 +9,6 @@ import App from './App';
 import './index.css';
 
 const root = document.getElementById('root');
-const app = (<Provider store={store}><Router><App /></Router></Provider>);
+const app = (<Provider store={store()}><Router><App /></Router></Provider>);
 
 ReactDOM.render(app, root);
