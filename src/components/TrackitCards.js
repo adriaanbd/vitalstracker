@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchVitalsData from '../store/thunks/vitals';
 import { Pane } from 'evergreen-ui';
+import { fetchVitalsData } from '../store/thunks/vitals';
 import TrackitCard from './TrackitCard';
 import './styles/TrackitCards.css';
 import Layout from './Layout';
