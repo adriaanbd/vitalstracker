@@ -6,60 +6,42 @@ import TrackitCard from './TrackitCard';
 import './styles/TrackitCards.css';
 import Layout from './Layout';
 
+function setDayCards(dayData, day) {
+  const cards = [];
+  let isHeader = false;
+  if (dayData) {
+    for (let i = 0; i < dayData.length; i += 1) {
+      const { category, measure } = dayData[i];
+      cards.push(<TrackitCard day={isHeader ? '' : day}
+                              category={category}
+                              measure={measure}/>);
+      isHeader = true;
+    }
+  }
+  return cards;
+}
+
 function TrackitCards() {
-  const { vitals } = useSelector(state => state);
+  const { today, yesterday, last_week: lastWeek } = useSelector(state => state.vitals.vitals);
+  const { id } = useSelector(state => state.users.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchVitalsData());
+    dispatch(fetchVitalsData(id));
   }, []);
-
-  function setCards() {
-    const { today, yesterday, last_week } = JSON.parse(localStorage.vitals);
-    const html = [];
-    if (today) {
-      let isHeader = false;
-      for (let i = 0; i < today.length; i += 1) {
-        const { category, measure } = today[i];
-        html.push(<TrackitCard day={isHeader ? '' : 'Today'}
-                             category={category}
-                             measure={measure}
-                />);
-        isHeader = true;
-      }
-    } if (yesterday) {
-      let isHeader = false;
-      for (let i = 0; i < yesterday.length; i += 1) {
-        const { category, measure } = yesterday[i];
-        html.push(<TrackitCard day={isHeader ? '' : 'Yesterday'}
-                             category={category}
-                             measure={measure}
-                />);
-        isHeader = true;
-      }
-    } if (last_week) {
-      let isHeader = false;
-      for (let i = 0; i < last_week.length; i += 1) {
-        const { category, measure } = last_week[i];
-        html.push(<TrackitCard day={isHeader ? '' : 'One week ago'}
-                             category={category}
-                             measure={measure}
-                />);
-        isHeader = true;
-      }
-    }
-    return html;
-  }
 
   return (
     <>
       <Layout>
-        <Pane display="flex"
-              flexDirection="column"
-              width="100vw"
-              height="80%"
+        <Pane
+          display="flex"
+          flexDirection="column"
+          width="100vw"
+          height="80%"
         >
-          {setCards()}
+          {setDayCards(today, 'Today')}
+          {setDayCards(yesterday, 'Yesterday')}
+          {setDayCards(lastWeek, 'One week ago')}
         </Pane>
       </Layout>
     </>
