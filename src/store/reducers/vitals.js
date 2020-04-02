@@ -12,6 +12,7 @@ const INIT_STATE = {
 
 function vitals(state = INIT_STATE, action) {
   const { type, payload } = action;
+  console.log("vitals reducer payload =>", payload);
   switch (type) {
     case CREATE_VITAL:
       return {

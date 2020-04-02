@@ -5,7 +5,8 @@ import {
   CREATE_USER,
 } from './types';
 
-export default function createVital(vital) {
+export function createVitalAction(vital) {
+  console.log("create vital action payload=>", vital);
   return {
     type: CREATE_VITAL,
     payload: vital,

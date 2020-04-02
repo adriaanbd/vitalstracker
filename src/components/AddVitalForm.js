@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useRouteMatch, useHistory, Redirect } from 'react-router-dom';
-import axios from 'axios';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
-import { usersEndpoint } from '../api/endpoints';
-import createVital from '../store/actions/index';
+import { createVital } from '../store/thunks/vitals';
 
 const UNITS = {
   weight: ['LB', 'KG'],
@@ -44,7 +42,7 @@ function relPath(url) {
 }
 
 
-function AddVitalForm() {
+function AddVitalForm(props) {
   const { url } = useRouteMatch();
   const [vitalData, setVitalData] = useState(DEFAULT_STATE);
   const dispatch = useDispatch();
@@ -72,23 +70,14 @@ function AddVitalForm() {
       const data = {
         measure: measureStr,
         category: vitalName,
-        user_id: localStorage.getItem('user_id'),
       };
-
-      (async () => {
-        try {
-          const resp = await axios.post(`${usersEndpoint}${localStorage.user_id}$/vitals`, { ...data });
-          if (resp.status === 201) {
-            dispatch(createVital(resp.data));
-            history.push('/vitals');
-          }
-        } catch (error) {
-          //
-        }
-      })();
+      console.log("handle submit data =>", data);
+      dispatch(createVital(props.userId, data));
     } else {
-      dispatch(createVital({ ...vitalData, category: vitalName }));
+      const data = { measure: vitalData.measureInput, category: vitalName, ...vitalData }
+      dispatch(createVital(props.userId, data));
     }
+    history.push('/vitals');
     setVitalData(DEFAULT_STATE);
   }
 

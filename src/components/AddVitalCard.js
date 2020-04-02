@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './styles/AddVitalCard.css';
 import Layout from './Layout';
 import AddVitalForm from './AddVitalForm';
@@ -6,6 +7,7 @@ import { Pane, Heading, Text } from 'evergreen-ui';
 
 function AddVitalCard(props) {
   const { icon, title, id } = props;
+  const { id: userId } = useSelector(state => state.users.user);
 
   return (
     <>
@@ -30,7 +32,7 @@ function AddVitalCard(props) {
                 backgroundColor="whitesmoke"
           >
             <Text id="vital-card-icon">{ icon }</Text>
-            <AddVitalForm />
+            <AddVitalForm userId={userId}/>
           </Pane>
         </Pane>
       </Layout>

@@ -7,6 +7,7 @@ export function fetchUser(username) {
     try {
       const res = await sendRequest('post', path, username);
       const userData = await res.data;
+      localStorage.setItem('userId', userData.id);
       return dispatch(setCurrentUser(userData));
     } catch (error) {
       return error;
