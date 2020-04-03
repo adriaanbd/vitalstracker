@@ -1,14 +1,30 @@
 import sendRequest from '../../api/calls';
-import { setVitals, createVitalAction } from '../actions';
+import {
+  setTodayVitals,
+  setYesterdayVitals,
+  setLastWeekVitals,
+  createVitalAction,
+} from '../actions';
 
 
-export function fetchVitalsData(userId) {
+export function fetchVitalsData(userId, day = null) {
+  day = day.toLowerCase();
   return async (dispatch) => {
-    const path = `v1/users/${userId}/vitals`;
+    const path = `v1/users/${userId}/vitals?day=${day}`;
     try {
       const res = await sendRequest('get', path);
       const vitals = await res.data;
-      return dispatch(setVitals(vitals));
+      console.log("vitals from thunk", vitals);
+      switch (day) {
+        case 'today':
+          return dispatch(setTodayVitals(vitals));
+        case 'yesterday':
+          return dispatch(setYesterdayVitals(vitals));
+        case 'last_week':
+          return dispatch(setLastWeekVitals(vitals));
+        default:
+          return null;
+      }
     } catch (error) {
       return error;
     }

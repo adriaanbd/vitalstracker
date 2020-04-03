@@ -1,6 +1,8 @@
 import {
   CREATE_VITAL,
-  SET_VITALS,
+  SET_TODAY_VITALS,
+  SET_LAST_WEEK_VITALS,
+  SET_YESTERDAY_VITALS,
   SET_CURRENT_USER,
   CREATE_USER,
 } from './types';
@@ -13,10 +15,27 @@ export function createVitalAction(vital) {
   };
 }
 
-export function setVitals(vitals) {
+export function setTodayVitals(vitals) {
+  console.log("vitals from set vitals action =>", vitals);
   return {
-    type: SET_VITALS,
-    payload: vitals,
+    type: SET_TODAY_VITALS,
+    vitals,
+  };
+}
+
+export function setYesterdayVitals(vitals) {
+  console.log("vitals from set vitals action =>", vitals);
+  return {
+    type: SET_YESTERDAY_VITALS,
+    vitals,
+  };
+}
+
+export function setLastWeekVitals(vitals) {
+  console.log("vitals from set vitals action =>", vitals);
+  return {
+    type: SET_LAST_WEEK_VITALS,
+    vitals,
   };
 }
 

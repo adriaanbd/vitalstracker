@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
-import vitals from './vitals';
+import todayVitals from './todayVitals';
+import yesterdayVitals from './yesterdayVitals';
+import lastWeekVitals from './lastWeekVitals';
 import users from './users';
 
 const rootReducer = combineReducers({
-  vitals,
+  todayVitals,
+  yesterdayVitals,
+  lastWeekVitals,
   users,
 });
 

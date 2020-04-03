@@ -28,8 +28,7 @@ function setHeader(day) {
   return '';
 }
 
-
-function TrackitCard(props) {
+function MeasureCard(props) {
   // const { icon, date, mainMeasure, subMeasure } = props;
   return (
     <>
@@ -52,4 +51,4 @@ function TrackitCard(props) {
   );
 }
 
-export default TrackitCard;
+export default MeasureCard;

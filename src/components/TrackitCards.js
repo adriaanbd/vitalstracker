@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Pane } from 'evergreen-ui';
-import { fetchVitalsData } from '../store/thunks/vitals';
-import TrackitCard from './TrackitCard';
+import TrackitCard from './MeasureCard';
 import './styles/TrackitCards.css';
 import Layout from './Layout';
+import DayCard from './DayCard';
 
 function setDayCards(dayData, day) {
   const cards = [];
@@ -22,13 +22,7 @@ function setDayCards(dayData, day) {
 }
 
 function TrackitCards() {
-  const { today, yesterday, last_week: lastWeek } = useSelector(state => state.vitals.vitals);
-  const { id } = useSelector(state => state.users.user);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchVitalsData(id));
-  }, []);
+  // const { today, yesterday, last_week: lastWeek } = useSelector(state => state.vitals.vitals);
 
   return (
     <>
@@ -39,9 +33,9 @@ function TrackitCards() {
           width="100vw"
           height="80%"
         >
-          {setDayCards(today, 'Today')}
-          {setDayCards(yesterday, 'Yesterday')}
-          {setDayCards(lastWeek, 'One week ago')}
+          <DayCard day='Today'/>
+          <DayCard day='Yesterday'/>
+          <DayCard day='Last Week' />
         </Pane>
       </Layout>
     </>
