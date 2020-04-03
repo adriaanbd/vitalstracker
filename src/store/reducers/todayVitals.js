@@ -7,11 +7,10 @@ import {
 const INIT_STATE = [];
 
 function todayVitals(state = INIT_STATE, action) {
-  const { type, payload } = action;
-  console.log("today vitals reducer payload =>", payload);
+  const { type } = action;
   switch (type) {
     case CREATE_VITAL:
-      return [...state, payload];
+      return [...state, action];
     case SET_TODAY_VITALS:
       return action.vitals;
     default:

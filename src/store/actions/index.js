@@ -8,7 +8,6 @@ import {
 } from './types';
 
 export function createVitalAction(vital) {
-  console.log("create vital action payload=>", vital);
   return {
     type: CREATE_VITAL,
     payload: vital,
@@ -16,7 +15,6 @@ export function createVitalAction(vital) {
 }
 
 export function setTodayVitals(vitals) {
-  console.log("vitals from set vitals action =>", vitals);
   return {
     type: SET_TODAY_VITALS,
     vitals,
@@ -24,7 +22,6 @@ export function setTodayVitals(vitals) {
 }
 
 export function setYesterdayVitals(vitals) {
-  console.log("vitals from set vitals action =>", vitals);
   return {
     type: SET_YESTERDAY_VITALS,
     vitals,
@@ -32,7 +29,6 @@ export function setYesterdayVitals(vitals) {
 }
 
 export function setLastWeekVitals(vitals) {
-  console.log("vitals from set vitals action =>", vitals);
   return {
     type: SET_LAST_WEEK_VITALS,
     vitals,

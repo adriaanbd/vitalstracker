@@ -59,7 +59,6 @@ function AddVitalForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // here we make a post to the api endpoint to save result
     if (!vitalData.unit) {
       let measureStr;
       if (vitalData.measureInput === 'mood') {
@@ -71,10 +70,9 @@ function AddVitalForm(props) {
         measure: measureStr,
         category: vitalName,
       };
-      console.log("handle submit data =>", data);
       dispatch(createVital(props.userId, data));
     } else {
-      const data = { measure: vitalData.measureInput, category: vitalName, ...vitalData }
+      const data = { measure: vitalData.measureInput, category: vitalName, ...vitalData };
       dispatch(createVital(props.userId, data));
     }
     history.push('/vitals');

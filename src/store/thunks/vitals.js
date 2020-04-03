@@ -32,12 +32,12 @@ export function fetchVitalsData(userId, day = null) {
 }
 
 export function createVital(userId, vitalData) {
-  return async (dispatch) => {
+  return async () => {
     const path = `v1/users/${userId}/vitals`;
     try {
       const resp = await sendRequest('post', path, vitalData);
       const vital = await resp.data;
-      return dispatch(createVitalAction(vital));
+      return vital;
     } catch (error) {
       return error;
     }
