@@ -3,19 +3,18 @@ import {
   setTodayVitals,
   setYesterdayVitals,
   setLastWeekVitals,
-  createVitalAction,
 } from '../actions';
 
 
 export function fetchVitalsData(userId, day = null) {
-  day = day.toLowerCase();
+  const DAY = day.toLowerCase();
   return async (dispatch) => {
-    const path = `v1/users/${userId}/vitals?day=${day}`;
+    const path = `v1/users/${userId}/vitals?day=${DAY}`;
     try {
       const res = await sendRequest('get', path);
       const vitals = await res.data;
       console.log("vitals from thunk", vitals);
-      switch (day) {
+      switch (DAY) {
         case 'today':
           return dispatch(setTodayVitals(vitals));
         case 'yesterday':

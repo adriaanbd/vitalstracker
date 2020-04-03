@@ -29,59 +29,58 @@ const UNITS = {
   diastolic: ['mm Hg'],
 };
 
-const DEFAULT_STATE = {
+function relPath(url) {
+  const arr = url.split('/');
+  return `${arr[arr.length - 1]}`;
+}
+
+const VITAL_STATE = {
   category: '',
-  measureInput: '',
+  measure: '',
   unit: '',
 };
 
-
-function relPath(url) {
-  const arr = url.split('/');
-  return arr[arr.length - 1];
-}
-
-
 function AddVitalForm(props) {
-  const { url } = useRouteMatch();
-  const [vitalData, setVitalData] = useState(DEFAULT_STATE);
+  const [vital, setVital] = useState(VITAL_STATE);
+  const { measure, unit } = vital;
+
   const dispatch = useDispatch();
+
   const history = useHistory();
-  const vitalName = relPath(url);
+  const { url } = useRouteMatch();
+  const category = relPath(url);
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setVitalData(prevVitalData => ({
-      ...prevVitalData,
+    setVital(prevState => ({
+      ...prevState,
       [name]: value,
     }));
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (!vitalData.unit) {
+    if (!unit) {
       let measureStr;
-      if (vitalData.measureInput === 'mood') {
-        measureStr = `${UNITS[vitalName][0]}`;
+      if (measure === 'mood') {
+        measureStr = `${UNITS[category][0]}`;
       } else {
-        measureStr = `${vitalData.measureInput} ${UNITS[vitalName][0]}`;
+        measureStr = `${measure} ${UNITS[category][0]}`;
       }
-      const data = {
-        measure: measureStr,
-        category: vitalName,
-      };
-      dispatch(createVital(props.userId, data));
+      dispatch(createVital(props.userId, { ...vital, measure: measureStr }));
     } else {
-      const data = { measure: vitalData.measureInput, category: vitalName, ...vitalData };
-      dispatch(createVital(props.userId, data));
+      console.log(event);
+      setVital(prev => ({ ...prev, category }));
+      console.log(vital);
+      // dispatch(createVital(props.userId, vital));
     }
     history.push('/vitals');
-    setVitalData(DEFAULT_STATE);
+    setVital(VITAL_STATE);
   }
 
   function setOptions(vital) {
     return [
-      ...[<option value={UNITS[vital][0]} disabled hidden>UNIT</option>],
+      ...[<option key="99" value={UNITS[vital][0]} disabled hidden>UNIT</option>],
       ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
   }
 
@@ -92,9 +91,10 @@ function AddVitalForm(props) {
           id="unit-select"
           name="unit"
           className="measure"
-          value={vitalData.unit}
+          value={unit}
           onChange={handleChange}
-          children={setOptions(vitalName)}>
+        >
+          {setOptions(vitalName)}
         </Select>
       );
     }
@@ -102,11 +102,11 @@ function AddVitalForm(props) {
       <>
         <TextInput
           type="text"
-          name="measureInput"
+          name="measure"
           id="measure-input-field"
           className="measure"
           placeholder=""
-          value={vitalData.measureInput}
+          value={measure}
           onChange={handleChange}
           required={true}
         />
@@ -114,9 +114,10 @@ function AddVitalForm(props) {
           id="unit-select"
           name="unit"
           className="measure"
-          value={vitalData.unit}
+          value={unit}
           onChange={handleChange}
-          children={setOptions(vitalName)}>
+        >
+          {setOptions(vitalName)}
         </Select>
       </>
     );
@@ -125,10 +126,14 @@ function AddVitalForm(props) {
     <Pane marginLeft={16} marginRight={16} border="default" elevation={1}>
       <form id="new-vital-form" onSubmit={handleSubmit}>
         <div id="measure-and-unit">
-          {htmlForm(vitalName)}
+          {htmlForm(category)}
         </div>
-        <button type="submit"
-                id="add-vital-btn">Add {`${vitalName}`}
+        <button
+          type="submit"
+          id="add-vital-btn"
+        >
+          Add
+          {` ${category}`}
         </button>
       </form>
     </Pane>
