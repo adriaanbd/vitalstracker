@@ -12,13 +12,15 @@ import MenuHeader from './MenuHeader';
 import MenuItem from './MenuItem';
 import './styles/Menu.css';
 import Layout from './Layout';
+import { useSelector } from 'react-redux';
 
 function Menu() {
+  const { user } = useSelector(state => state.users);
   return (
     <Layout title='More'>
       <div className="menu-frame">
         <MenuHeader avatar={<FontAwesomeIcon icon={faUserTie} size="2x"/>}
-                    name={localStorage.username}
+                    name={user.username ? user.username : localStorage.username}
                     gender={'Gender'}
         />
         <div className="menu-items-frame">

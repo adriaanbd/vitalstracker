@@ -28,7 +28,8 @@ function DayCard(props) {
 
   useEffect(() => {
     const dayTitle = props.day === 'Last Week' ? props.day.split(' ').join('_') : props.day;
-    dispatch(fetchVitalsData(user.id, dayTitle));
+    const userId = user.id ? user.id : localStorage.userId;
+    dispatch(fetchVitalsData(userId, dayTitle));
   }, []);
 
   return (

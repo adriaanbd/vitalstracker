@@ -5,7 +5,6 @@ import Layout from './Layout';
 import DayCard from './DayCard';
 
 function TrackitCards() {
-
   return (
     <>
       <Layout>
