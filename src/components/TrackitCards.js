@@ -14,9 +14,9 @@ function TrackitCards() {
           width="100vw"
           height="80%"
         >
-          <DayCard day='Today'/>
-          <DayCard day='Yesterday'/>
-          <DayCard day='Last Week' />
+          <DayCard day="Today" />
+          <DayCard day="Yesterday" />
+          <DayCard day="Last Week" />
         </Pane>
       </Layout>
     </>
