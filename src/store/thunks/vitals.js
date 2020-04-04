@@ -8,7 +8,7 @@ import {
 
 export function fetchVitalsData(userId, day = null) {
   const DAY = day.toLowerCase();
-  return async (dispatch) => {
+  return async dispatch => {
     const path = `v1/users/${userId}/vitals?day=${DAY}`;
     try {
       const res = await sendRequest('get', path);
