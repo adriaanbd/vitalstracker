@@ -1,17 +1,27 @@
 import React from 'react';
+import { Pane, Card } from 'evergreen-ui';
 
 function ProgressTile(props) {
   const { icon, title, measure } = props;
   return (
-    <div className="progress-tile">
-      <div className="tile-icon">
-        {icon}
-      </div>
-      <div className="tile-info">
-        <div className="progress-title">{title}</div>
-        <div className="progress-measure">{measure}</div>
-      </div>
-    </div>
+    <Card
+      display="flex"
+      justifyContent="space-around"
+      alignItems="center"
+      color="#67899c"
+      margin="3%"
+      height="25%"
+      background="tint1"
+      width="43%"
+      elevation={1}
+      border="muted"
+    >
+      <Pane>{icon}</Pane>
+      <Pane>
+        <Pane>{title}</Pane>
+        <Pane>{measure}</Pane>
+      </Pane>
+    </Card>
   );
 }
 
