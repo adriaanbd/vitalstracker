@@ -38,11 +38,17 @@ function DayCard(props) {
     <>
       <DayCardHeader title={day} />
       <Table overflow="scroll">
-        <Table.Head>
-          <Table.TextHeaderCell>Category</Table.TextHeaderCell>
-          <Table.TextHeaderCell>Measure</Table.TextHeaderCell>
+        <Table.Head paddingLeft={4} width="100%">
+          <Table.TextHeaderCell>
+            Category
+          </Table.TextHeaderCell>
+          <Table.TextHeaderCell>
+            Measure
+          </Table.TextHeaderCell>
         </Table.Head>
-        <Table.Body>
+        <Table.Body
+          height="auto"
+        >
           { setMeasureCards(dayData) }
         </Table.Body>
       </Table>

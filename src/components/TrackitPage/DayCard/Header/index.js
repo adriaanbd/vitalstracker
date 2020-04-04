@@ -14,7 +14,7 @@ function DayCardHeader(props) {
     >
       <Heading
         size={500}
-        paddingLeft={16}
+        paddingLeft={4}
         color="#67899C"
         fontWeight={600}
       >

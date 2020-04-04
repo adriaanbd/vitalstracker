@@ -1,8 +1,9 @@
 import React from 'react';
 import { Pane } from 'evergreen-ui';
-import './TrackitPage.css';
 import Layout from '../Layout';
 import DayCard from './DayCard';
+
+import './TrackitPage.css';
 
 function TrackitCards() {
   return (
