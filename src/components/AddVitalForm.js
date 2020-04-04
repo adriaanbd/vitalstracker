@@ -62,10 +62,16 @@ function AddVitalForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     const DEFAULT_UNIT = UNITS[category][0];
-    const measureStr = category === 'mood' ? `${DEFAULT_UNIT}` : `${measure} ${unit}`;
-    const data = { ...vital, measure: measureStr };
-    if (!unit) dispatch(createVital(props.userId, data));
-    if (unit) dispatch(createVital(props.userId, data));
+    const isMood = category === 'mood';
+    let measureStr;
+    if (!unit && isMood) {
+      measureStr = isMood ? `${DEFAULT_UNIT}` : `${measure} ${unit}`;
+      dispatch(createVital(props.userId, { measure: measureStr, category }));
+    } else if (!unit) {
+      dispatch(createVital(props.userId, { measure: `${measure} ${DEFAULT_UNIT}`, category }));
+    } else {
+      dispatch(createVital(props.userId, { measure: `${measure} ${unit}`, category }));
+    }
     history.push('/vitals');
     setVital(VITAL_STATE);
   }
