@@ -21,7 +21,7 @@ function DayCard(props) {
   const dayToVitals = {
     Today: 'todayVitals',
     Yesterday: 'yesterdayVitals',
-    'Last Week': 'lastWeekVitals',
+    'More than 1 day ago': 'moreThan1DayAgoVitals',
   };
   const vitalsName = dayToVitals[day];
   const dayData = useSelector(state => state[vitalsName]);
@@ -29,7 +29,9 @@ function DayCard(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const dayTitle = day === 'Last Week' ? day.split(' ').join('_') : day;
+    const dayTitle = day.split(' ').length > 1
+      ? day.split(' ').join('_').toLowerCase() : day;
+    console.log(dayTitle);
     const userId = user.id ? user.id : localStorage.userId;
     dispatch(fetchVitalsData(userId, dayTitle));
   }, []);

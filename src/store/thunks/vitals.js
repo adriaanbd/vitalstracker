@@ -2,7 +2,7 @@ import sendRequest from '../../api/calls';
 import {
   setTodayVitals,
   setYesterdayVitals,
-  setLastWeekVitals,
+  setMoreThan1DayAgoVitals,
 } from '../actions';
 
 
@@ -13,14 +13,13 @@ export function fetchVitalsData(userId, day = null) {
     try {
       const res = await sendRequest('get', path);
       const vitals = await res.data;
-      console.log("vitals from thunk", vitals);
       switch (DAY) {
         case 'today':
           return dispatch(setTodayVitals(vitals));
         case 'yesterday':
           return dispatch(setYesterdayVitals(vitals));
-        case 'last_week':
-          return dispatch(setLastWeekVitals(vitals));
+        case 'more_than_1_day_ago':
+          return dispatch(setMoreThan1DayAgoVitals(vitals));
         default:
           return null;
       }

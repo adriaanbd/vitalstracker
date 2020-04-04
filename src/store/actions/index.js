@@ -1,7 +1,7 @@
 import {
   CREATE_VITAL,
   SET_TODAY_VITALS,
-  SET_LAST_WEEK_VITALS,
+  SET_MORE_THAN_1_DAY_AGO_VITALS,
   SET_YESTERDAY_VITALS,
   SET_CURRENT_USER,
   CREATE_USER,
@@ -28,9 +28,9 @@ export function setYesterdayVitals(vitals) {
   };
 }
 
-export function setLastWeekVitals(vitals) {
+export function setMoreThan1DayAgoVitals(vitals) {
   return {
-    type: SET_LAST_WEEK_VITALS,
+    type: SET_MORE_THAN_1_DAY_AGO_VITALS,
     vitals,
   };
 }

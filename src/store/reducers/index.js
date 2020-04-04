@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import todayVitals from './todayVitals';
 import yesterdayVitals from './yesterdayVitals';
-import lastWeekVitals from './lastWeekVitals';
+import moreThan1DayAgoVitals from './moreThan1DayAgoVitals';
 import users from './users';
 
 const rootReducer = combineReducers({
   todayVitals,
   yesterdayVitals,
-  lastWeekVitals,
+  moreThan1DayAgoVitals,
   users,
 });
 

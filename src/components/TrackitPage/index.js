@@ -17,7 +17,7 @@ function TrackitCards() {
         >
           <DayCard day="Today" />
           <DayCard day="Yesterday" />
-          <DayCard day="Last Week" />
+          <DayCard day="More than 1 day ago" />
         </Pane>
       </Layout>
     </>
