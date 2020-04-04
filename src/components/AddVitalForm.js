@@ -35,9 +35,9 @@ function relPath(url) {
 }
 
 const VITAL_STATE = {
-  category: '',
   measure: '',
   unit: '',
+  category: '',
 };
 
 function AddVitalForm(props) {
@@ -55,33 +55,27 @@ function AddVitalForm(props) {
     setVital(prevState => ({
       ...prevState,
       [name]: value,
+      category,
     }));
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (!unit) {
-      let measureStr;
-      if (measure === 'mood') {
-        measureStr = `${UNITS[category][0]}`;
-      } else {
-        measureStr = `${measure} ${UNITS[category][0]}`;
-      }
-      dispatch(createVital(props.userId, { ...vital, measure: measureStr }));
-    } else {
-      console.log(event);
-      setVital(prev => ({ ...prev, category }));
-      console.log(vital);
-      // dispatch(createVital(props.userId, vital));
-    }
+    const DEFAULT_UNIT = UNITS[category][0];
+    const measureStr = category === 'mood' ? `${DEFAULT_UNIT}` : `${measure} ${unit}`;
+    const data = { ...vital, measure: measureStr };
+    if (!unit) dispatch(createVital(props.userId, data));
+    if (unit) dispatch(createVital(props.userId, data));
     history.push('/vitals');
     setVital(VITAL_STATE);
   }
 
   function setOptions(vital) {
     return [
-      ...[<option key="99" value={UNITS[vital][0]} disabled hidden>UNIT</option>],
-      ...UNITS[vital].map((cat, idx) => <option key={idx} value={cat}>{cat}</option>)];
+      ...[<option key="99" value={[UNITS.category][0]} disabled hidden>UNIT</option>],
+      ...UNITS[vital].map(
+        (cat, idx) => <option key={idx} value={cat}>{cat}</option>,
+      )];
   }
 
   function htmlForm(vitalName) {
