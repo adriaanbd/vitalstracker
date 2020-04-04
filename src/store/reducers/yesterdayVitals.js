@@ -6,8 +6,7 @@ import {
 const INIT_STATE = [];
 
 function yesterdayVitals(state = INIT_STATE, action) {
-  const { type, payload } = action;
-  console.log("yesterday vitals reducer payload =>", payload);
+  const { type } = action;
   switch (type) {
     case SET_YESTERDAY_VITALS:
       return action.vitals;

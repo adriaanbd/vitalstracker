@@ -2,7 +2,7 @@ import sendRequest from '../../api/calls';
 import { setCurrentUser, createUserAction } from '../actions/index';
 
 export function fetchUser(username) {
-  return async (dispatch) => {
+  return async dispatch => {
     const path = 'v1/sessions/';
     try {
       const res = await sendRequest('post', path, username);
@@ -16,7 +16,7 @@ export function fetchUser(username) {
 }
 
 export function createUser(username) {
-  return async (dispatch) => {
+  return async dispatch => {
     const path = 'v1/users/';
     try {
       const res = await sendRequest('post', path, username);
