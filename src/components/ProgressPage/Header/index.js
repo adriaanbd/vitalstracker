@@ -18,8 +18,8 @@ function ProgressHeader() {
         marginTop="1em"
       >
         <ProgressCircleCard title="Weight" measure="135" unit="lbs" />
-        <ProgressCircleCard title="Glucose" measure="XX" unit="uu" />
-        <ProgressCircleCard title="Pressure" measure="XX" unit="uu" />
+        <ProgressCircleCard title="Weight" measure="135" unit="lbs" />
+        <ProgressCircleCard title="Weight" measure="135" unit="lbs" />
       </Pane>
     </Pane>
   );

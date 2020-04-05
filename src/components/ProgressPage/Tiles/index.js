@@ -7,9 +7,9 @@ function ProgressPageTiles() {
     <Pane
       display="flex"
       flexWrap="wrap"
-      backgroundColor="lightgray"
-      width="100%"
-      height="100%"
+      background="tint2"
+      width="100vw"
+      height="100vh"
       justifyContent="center"
       alignItems="center"
     >

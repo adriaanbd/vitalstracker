@@ -1,18 +1,23 @@
 import React from 'react';
+import { Pane } from 'evergreen-ui';
 import ProgressPageHeader from './Header';
 import ProgressPageTiles from './Tiles';
 import Layout from '../Layout';
 
-import './ProgressPage.css';
 
 function ProgressPage() {
   return (
     <>
       <Layout title="Progress">
-        <div className="progress-page-container">
+        <Pane
+          height="80%"
+          width="100vw"
+          display="flex"
+          flexDirection="column"
+        >
           <ProgressPageHeader />
           <ProgressPageTiles />
-        </div>
+        </Pane>
       </Layout>
     </>
   );

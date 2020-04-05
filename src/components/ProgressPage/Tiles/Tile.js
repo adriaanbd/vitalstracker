@@ -11,10 +11,9 @@ function ProgressTile(props) {
       color="#67899c"
       margin="3%"
       height="25%"
-      background="tint1"
+      background="white"
       width="43%"
       elevation={1}
-      border="muted"
     >
       <Pane>{icon}</Pane>
       <Pane>
