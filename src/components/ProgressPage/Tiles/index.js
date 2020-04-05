@@ -1,17 +1,29 @@
 import React from 'react';
-import './ProgressPageTiles.css';
+import { Pane } from 'evergreen-ui';
 import ProgressTile from './Tile';
 
 function ProgressPageTiles() {
   return (
-    <div className="tile-frame">
-      <ProgressTile icon="Icon" title="Weight" measure="135lbs" />
+    <Pane
+      display="flex"
+      flexWrap="wrap"
+      background="tint2"
+      width="100vw"
+      height="100vh"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <ProgressTile
+        icon="Icon"
+        title="Weight"
+        measure="135lbs"
+      />
       <ProgressTile />
       <ProgressTile />
       <ProgressTile />
       <ProgressTile />
       <ProgressTile />
-    </div>
+    </Pane>
   );
 }
 
