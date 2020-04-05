@@ -1,21 +1,21 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import './ProgressDateHeader.css';
+import { Pane, Icon, Text } from 'evergreen-ui';
 
 function ProgressDateHeader() {
   return (
-    <div className="date-container">
-      <div id="previous-date-angle-left" className="date-angle-arrow">
-        <FontAwesomeIcon icon={faAngleLeft} />
-      </div>
-      <div id="progress-date">
+    <Pane
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      height="2em"
+      color="#67899c"
+    >
+      <Icon icon="chevron-left" cursor="pointer" />
+      <Text id="progress-date">
         1 January 2020
-      </div>
-      <div id="next-date-angle-right" className="date-angle-arrow">
-        <FontAwesomeIcon icon={faAngleRight} />
-      </div>
-    </div>
+      </Text>
+      <Icon icon="chevron-right" cursor="pointer" />
+    </Pane>
   );
 }
 

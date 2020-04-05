@@ -2,10 +2,8 @@ import React from 'react';
 import { Pane } from 'evergreen-ui';
 import ProgressDateHeader from './DateHeader';
 import ProgressCircleCard from './CircleCard';
-import './ProgressHeader.css';
 
 function ProgressHeader() {
-  // Angle Left and Angle Right should fetch data for corresponding date
   return (
     <Pane
       display="flex"
