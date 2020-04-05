@@ -28,10 +28,10 @@ function LoginPage() {
     } else {
       dispatch(fetchUser(userData));
     }
-    localStorage.setItem('userId', userData.id);
-    localStorage.setItem('username', userData.username);
-    history.push('/vitals');
+    sessionStorage.setItem('userId', userData.id);
+    sessionStorage.setItem('username', userData.username);
     setUserData(DEFAULT_STATE);
+    history.push('/vitals');
   }
 
   return (

@@ -1,14 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faUserTie,
-  faInfoCircle,
-  faCog,
-  faUser,
-  faEnvelope,
-  faBullseye,
-} from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
+import { Pane } from 'evergreen-ui';
 import MenuHeader from './Header/MenuHeader';
 import MenuItem from './Header/MenuItem';
 import './Menu.css';
@@ -18,40 +11,49 @@ function Menu() {
   const { user } = useSelector(state => state.users);
   return (
     <Layout title="More">
-      <div className="menu-frame">
+      <Pane
+        display="flex"
+        flexDirection="column"
+        height="80%"
+        width="100vw"
+      >
         <MenuHeader
-          avatar={<FontAwesomeIcon icon={faUserTie} size="2x"/>}
-          name={user.username ? user.username : localStorage.username}
-          gender="Gender"
+          name={user.username ? user.username : sessionStorage.username}
+          gender="Lego"
         />
-        <div className="menu-items-frame">
+        <Pane
+          display="flex"
+          flexDirection="column"
+          height="100%"
+          color="#67899c"
+        >
           <MenuItem
-            icon={<FontAwesomeIcon icon={faBullseye} />}
+            icon="locate"
             title="Your goal"
             relPath="goal"
           />
           <MenuItem
-            icon={<FontAwesomeIcon icon={faEnvelope} />}
+            icon="inbox"
             title="Mailing list"
             relPath="goal"
           />
           <MenuItem
-            icon={<FontAwesomeIcon icon={faUser} />}
+            icon="user"
             title="Your profile"
             relPath="profile"
           />
           <MenuItem
-            icon={<FontAwesomeIcon icon={faCog} />}
+            icon="cog"
             title="Settings"
             relPath="settings"
           />
           <MenuItem
-            icon={<FontAwesomeIcon icon={faInfoCircle} />}
+            icon="info-sign"
             title="Help"
             relPath="help"
           />
-        </div>
-      </div>
+        </Pane>
+      </Pane>
     </Layout>
   );
 }
