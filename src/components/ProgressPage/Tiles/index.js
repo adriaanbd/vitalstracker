@@ -9,7 +9,7 @@ function ProgressPageTiles() {
       flexWrap="wrap"
       background="tint2"
       width="100vw"
-      height="100vh"
+      height="100%"
       justifyContent="center"
       alignItems="center"
     >
