@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Pane, Icon, Text } from 'evergreen-ui';
 
+const STYLE = {
+  textDecoration: 'none',
+};
+
 function MenuItem(props) {
   const { relPath, icon, title } = props;
   return (
-    <Link to={`/menu/${relPath}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/menu/${relPath}`} style={STYLE}>
       <Pane
         display="flex"
         alignItems="center"
