@@ -72,8 +72,8 @@ function AddVitalForm(props) {
     } else {
       dispatch(createVital(props.userId, { measure: `${measure} ${unit}`, category }));
     }
-    history.push('/vitals');
     setVital(VITAL_STATE);
+    history.push('/vitals');
   }
 
   function setOptions(vital) {
