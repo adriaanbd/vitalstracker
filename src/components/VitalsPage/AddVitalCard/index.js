@@ -35,7 +35,7 @@ function AddVitalCard(props) {
             backgroundColor="whitesmoke"
           >
             <Text id="vital-card-icon">{ icon }</Text>
-            <AddVitalForm userId={userId ? userId : localStorage.userId} />
+            <AddVitalForm userId={userId ? userId : sessionStorage.userId} />
           </Pane>
         </Pane>
       </Layout>

@@ -31,8 +31,7 @@ function DayCard(props) {
   useEffect(() => {
     const dayTitle = day.split(' ').length > 1
       ? day.split(' ').join('_').toLowerCase() : day;
-    console.log(dayTitle);
-    const userId = user.id ? user.id : localStorage.userId;
+    const userId = user.id ? user.id : sessionStorage.userId;
     dispatch(fetchVitalsData(userId, dayTitle));
   }, []);
 
