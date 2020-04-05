@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Pane, Icon, Text } from 'evergreen-ui';
 
 function MenuItem(props) {
   const { relPath, icon, title } = props;
   return (
     <Link to={`/menu/${relPath}`} className="menu-link">
-      <div className="item-frame">
-        <div className="menu-icon">
-          {icon}
-        </div>
-        <div className="menu-title">
-          {title}
-        </div>
-      </div>
+      <Pane
+        display="flex"
+        alignItems="center"
+        backgroundColor="#e5eaee"
+        paddingLeft={8}
+        border="default"
+        elevation={1}
+      >
+        <Icon icon={props.icon} />
+        <Text padding={16}>{title}</Text>
+      </Pane>
     </Link>
   );
 }
