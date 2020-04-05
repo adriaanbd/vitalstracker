@@ -1,10 +1,10 @@
 import React from 'react';
-import { Pane, Card } from 'evergreen-ui';
+import { Pane } from 'evergreen-ui';
 
 function ProgressTile(props) {
   const { icon, title, measure } = props;
   return (
-    <Card
+    <Pane
       display="flex"
       justifyContent="space-around"
       alignItems="center"
@@ -21,7 +21,7 @@ function ProgressTile(props) {
         <Pane>{title}</Pane>
         <Pane>{measure}</Pane>
       </Pane>
-    </Card>
+    </Pane>
   );
 }
 
