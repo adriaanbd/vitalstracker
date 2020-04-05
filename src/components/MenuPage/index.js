@@ -1,10 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import { Pane } from 'evergreen-ui';
 import MenuHeader from './Header/MenuHeader';
 import MenuItem from './Header/MenuItem';
-import './Menu.css';
 import Layout from '../Layout';
 
 function Menu() {
