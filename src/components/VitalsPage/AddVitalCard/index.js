@@ -11,7 +11,7 @@ import './AddVitalCard.css';
 
 function AddVitalCard(props) {
   const { icon, title, id } = props;
-  const { id: userId } = useSelector(state => state.users.user);
+  const { id: userId } = useSelector(state => state.user);
   return (
     <>
       <Layout title="Add Vital">
