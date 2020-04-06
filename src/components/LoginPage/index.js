@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Pane, Card, TextInput } from 'evergreen-ui';
-import { createUser, fetchUser } from '../../store/thunks/users';
+import { createUser, fetchUser } from '../../store/thunks/user';
 import HeaderRibbon from '../Layout/Header';
 import './LoginPage.css';
 
-const DEFAULT_STATE = {
-  username: '',
-};
-
 function LoginPage() {
-  const [userData, setUserData] = useState(DEFAULT_STATE);
+  const [username, setUsername] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
   function handleChange(event) {
-    const { name, value } = event.target;
-    setUserData({ [name]: value });
+    const { value } = event.target;
+    setUsername(value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     const { target } = event;
     if (target.id === 'signup') {
-      dispatch(createUser(userData));
+      dispatch(createUser(username));
     } else {
-      dispatch(fetchUser(userData));
+      dispatch(fetchUser(username));
     }
-    setUserData(DEFAULT_STATE);
-    history.push('/vitals');
+    if (sessionStorage.userId) {
+      setUsername('');
+      history.push('/vitals');
+    } else {
+      alert('Something went wrong. Please try again');
+    }
   }
 
   return (
@@ -63,7 +63,7 @@ function LoginPage() {
               name="username"
               id="email-input"
               placeholder="Username"
-              value={userData.username}
+              value={username}
               height="2.5em"
               padding={8}
               width="100%"

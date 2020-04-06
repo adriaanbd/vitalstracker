@@ -5,7 +5,7 @@ export function fetchUser(username) {
   return async dispatch => {
     const path = 'v1/sessions/';
     try {
-      const res = await sendRequest('post', path, username);
+      const res = await sendRequest('post', path, { username });
       const userData = await res.data;
       sessionStorage.setItem('userId', userData.id);
       return dispatch(setCurrentUser(userData));
@@ -19,7 +19,7 @@ export function createUser(username) {
   return async dispatch => {
     const path = 'v1/users/';
     try {
-      const res = await sendRequest('post', path, username);
+      const res = await sendRequest('post', path, { username });
       const userData = await res.data;
       sessionStorage.setItem('userId', userData.id);
       return dispatch(createUserAction(userData));

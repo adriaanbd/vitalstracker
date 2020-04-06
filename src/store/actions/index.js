@@ -36,16 +36,16 @@ export function setMoreThan1DayAgoVitals(vitals) {
 }
 
 
-export function setCurrentUser(user) {
+export function setCurrentUser(userData) {
   return {
     type: SET_CURRENT_USER,
-    payload: user,
+    userData,
   };
 }
 
-export function createUserAction(user) {
+export function createUserAction(userData) {
   return {
     type: CREATE_USER,
-    payload: user,
+    userData,
   };
 }

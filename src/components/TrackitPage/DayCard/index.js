@@ -34,7 +34,7 @@ function DayCard(props) {
   };
   const vitalsName = dayToVitals[day];
   const dayData = useSelector(state => state[vitalsName]);
-  const { user } = useSelector(state => state.users);
+  const { user } = useSelector(state => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
