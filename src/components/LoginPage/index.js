@@ -26,10 +26,7 @@ function LoginPage() {
     if (target.id === 'signup') {
       dispatch(createUser(userData));
     } else {
-      dispatch(fetchUser(userData))
-        .then(resp => {
-          sessionStorage.setItem('userId', resp.payload.id);
-        });
+      dispatch(fetchUser(userData));
     }
     setUserData(DEFAULT_STATE);
     history.push('/vitals');
