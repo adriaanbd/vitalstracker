@@ -12,7 +12,14 @@ function setMeasureCards(dayData) {
     const {
       category, measure, id, created_at: date,
     } = dayData[i];
-    cards.push(<MeasureCard category={category} measure={measure} vitalId={id} date={date} />);
+    cards.push(
+      <MeasureCard
+        category={category}
+        measure={measure}
+        vitalId={id}
+        date={date}
+      />,
+    );
   }
   // eslint-disable-next-line consistent-return
   return cards;

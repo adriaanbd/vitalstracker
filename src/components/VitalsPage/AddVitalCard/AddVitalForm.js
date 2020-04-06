@@ -41,6 +41,7 @@ const VITAL_STATE = {
 };
 
 function AddVitalForm(props) {
+  const { userId } = props;
   const [vital, setVital] = useState(VITAL_STATE);
   const { measure, unit } = vital;
 
@@ -66,11 +67,11 @@ function AddVitalForm(props) {
     let measureStr;
     if (!unit && isMood) {
       measureStr = isMood ? `${DEFAULT_UNIT}` : `${measure} ${unit}`;
-      dispatch(createVital(props.userId, { measure: measureStr, category }));
+      dispatch(createVital(userId, { measure: measureStr, category }));
     } else if (!unit) {
-      dispatch(createVital(props.userId, { measure: `${measure} ${DEFAULT_UNIT}`, category }));
+      dispatch(createVital(userId, { measure: `${measure} ${DEFAULT_UNIT}`, category }));
     } else {
-      dispatch(createVital(props.userId, { measure: `${measure} ${unit}`, category }));
+      dispatch(createVital(userId, { measure: `${measure} ${unit}`, category }));
     }
     setVital(VITAL_STATE);
     history.push('/vitals');
@@ -108,7 +109,7 @@ function AddVitalForm(props) {
           placeholder=""
           value={measure}
           onChange={handleChange}
-          required={true}
+          required
         />
         <Select
           id="unit-select"

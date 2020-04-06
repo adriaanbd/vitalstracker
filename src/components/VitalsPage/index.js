@@ -13,9 +13,10 @@ import './VitalsPage.css';
 import Layout from '../Layout';
 
 function VitalCards(props) {
+  const { title } = props;
   return (
     <>
-      <Layout title={props.title}>
+      <Layout title={title}>
         <Pane display="flex" flexWrap="wrap" height="80%" width="90%">
           <VitalCard
             icon={<FontAwesomeIcon icon={faHeartbeat} size="3x" />}

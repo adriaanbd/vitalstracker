@@ -30,7 +30,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route exact path="/vitals">
-          <VitalCards title='Vitals'/>
+          <VitalCards title="Vitals" />
         </Route>
         <Route exact path="/tracker">
           <TrackitCards />
@@ -50,44 +50,44 @@ function App() {
         <Route path="/menu/help"><UnderConstruction /></Route>
         <Route path="/vitals/weight">
           <AddVitalCard
-            icon={ <FontAwesomeIcon icon={faWeight} size="5x" /> }
+            icon={<FontAwesomeIcon icon={faWeight} size="5x" />}
             title="Add your weight"
             id="0"
           />
         </Route>
         <Route path="/vitals/systolic">
           <AddVitalCard
-            icon={ <FontAwesomeIcon icon={faHeartbeat} size="5x" /> }
-            title='Add systolic pressure'
-            id='1'
+            icon={<FontAwesomeIcon icon={faHeartbeat} size="5x" />}
+            title="Add systolic pressure"
+            id="1"
           />
         </Route>
         <Route path="/vitals/diastolic">
           <AddVitalCard
-            icon={ <FontAwesomeIcon icon={faHeartbeat} size="5x" /> }
-            title='Add your diastolic pressure'
-            id='2'
+            icon={<FontAwesomeIcon icon={faHeartbeat} size="5x" />}
+            title="Add your diastolic pressure"
+            id="2"
           />
         </Route>
         <Route path="/vitals/mood">
           <AddVitalCard
-            icon={ <FontAwesomeIcon icon={faSmile} size="5x" /> }
-            title='Add your mood'
-            id='3'
+            icon={<FontAwesomeIcon icon={faSmile} size="5x" />}
+            title="Add your mood"
+            id="3"
           />
         </Route>
         <Route path="/vitals/temperature">
           <AddVitalCard
-            icon={ <FontAwesomeIcon icon={faThermometerHalf} size="5x" /> }
-            title='Add your temperature'
-            id='4'
+            icon={<FontAwesomeIcon icon={faThermometerHalf} size="5x" />}
+            title="Add your temperature"
+            id="4"
           />
         </Route>
         <Route path="/vitals/glucose">
           <AddVitalCard
-              icon={ <FontAwesomeIcon icon={faAppleAlt} size="5x" /> }
-              title='Add your glucose'
-              id='5'
+            icon={<FontAwesomeIcon icon={faAppleAlt} size="5x" />}
+            title="Add your glucose"
+            id="5"
           />
         </Route>
       </Switch>
