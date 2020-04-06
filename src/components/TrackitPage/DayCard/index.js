@@ -9,8 +9,10 @@ function setMeasureCards(dayData) {
   const cards = [];
   if (!dayData) { return; }
   for (let i = 0; i < dayData.length; i += 1) {
-    const { category, measure, id } = dayData[i];
-    cards.push(<MeasureCard category={category} measure={measure} vitalId={id} />);
+    const {
+      category, measure, id, created_at: date,
+    } = dayData[i];
+    cards.push(<MeasureCard category={category} measure={measure} vitalId={id} date={date} />);
   }
   // eslint-disable-next-line consistent-return
   return cards;
@@ -31,7 +33,7 @@ function DayCard(props) {
   useEffect(() => {
     const dayTitle = day.split(' ').length > 1
       ? day.split(' ').join('_').toLowerCase() : day;
-    const userId = user.id ? user.id : sessionStorage.userId;
+    const userId = user.id ? user.id : sessionStorage.getItem('userId');
     dispatch(fetchVitalsData(userId, dayTitle));
   }, []);
 
@@ -45,6 +47,9 @@ function DayCard(props) {
           </Table.TextHeaderCell>
           <Table.TextHeaderCell>
             Measure
+          </Table.TextHeaderCell>
+          <Table.TextHeaderCell>
+            Date
           </Table.TextHeaderCell>
         </Table.Head>
         <Table.Body
