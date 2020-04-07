@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   Pane, Card, Heading, Text,
@@ -34,5 +35,11 @@ function VitalCard(props) {
     </Pane>
   );
 }
+
+VitalCard.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+};
 
 export default VitalCard;
