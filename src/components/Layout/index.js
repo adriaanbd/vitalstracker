@@ -4,7 +4,7 @@ import NavFooter from './Footer';
 
 function Layout(props) {
   const {
-    title, icon, iconName, children
+    title, icon, iconName, children,
   } = props;
   return (
     <>

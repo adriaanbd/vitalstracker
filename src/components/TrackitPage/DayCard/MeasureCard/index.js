@@ -3,7 +3,7 @@ import { Table } from 'evergreen-ui';
 
 function MeasureCard(props) {
   const {
-    category, measure, vitalId, date
+    category, measure, vitalId, date,
   } = props;
   const d = new Date(date.split('T')[0]);
   const categoryTitle = `${category[0].toUpperCase()}${category.slice(1)}`;

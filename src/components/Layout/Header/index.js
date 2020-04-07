@@ -10,7 +10,7 @@ function HeaderRibbon(props) {
         {icon ? <Link to="/menu" id="angle-left">{icon}</Link> : ''}
       </div>
       <div id="ribbon-title-box">
-        <h1 id="ribbon-title">{title ? title : 'Track.It'}</h1>
+        <h1 id="ribbon-title">{title || 'Track.It'}</h1>
       </div>
       <div className="ribbon-side" id="ribbon-right" />
     </div>
