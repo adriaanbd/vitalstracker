@@ -27,8 +27,6 @@ function LoginPage() {
     if (sessionStorage.userId) {
       setUsername('');
       history.push('/vitals');
-    } else {
-      history.push('/');
     }
   }
 
