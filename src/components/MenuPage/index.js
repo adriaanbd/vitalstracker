@@ -6,7 +6,7 @@ import MenuItem from './Header/MenuItem';
 import Layout from '../Layout';
 
 function Menu() {
-  const { user } = useSelector(state => state.users);
+  const { user } = useSelector(state => state);
   return (
     <Layout title="More">
       <Pane
