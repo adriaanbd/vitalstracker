@@ -1,4 +1,4 @@
-import sendRequest from '../../api/calls';
+import sendRequest from '../../utils/api';
 import { setCurrentUser, createUserAction } from '../actions/index';
 
 export function fetchUser(username) {

@@ -1,4 +1,4 @@
-import sendRequest from '../../api/calls';
+import sendRequest from '../../utils/api';
 import {
   setTodayVitals,
   setYesterdayVitals,
