@@ -2,32 +2,9 @@ import React, { useState } from 'react';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import { Select, TextInput, Pane } from 'evergreen-ui';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createVital } from '../../../store/thunks/vitals';
-
-const UNITS = {
-  weight: ['LB', 'KG'],
-  mood: [
-    'Cheerful',
-    'Reflective',
-    'Humorous',
-    'Calm',
-    'Romantic',
-    'Angry',
-    'Tense',
-    'Fearful',
-    'Lonely',
-    'Happy',
-    'Sad',
-    'Nostalgic',
-    'Melancholic',
-    'Lighthearted',
-    'Whimsical',
-  ],
-  temperature: ['F', 'C'],
-  glucose: ['mmnol/L', 'mg/dL'],
-  systolic: ['mm Hg'],
-  diastolic: ['mm Hg'],
-};
+import VITAL_UNITS from '../../../utils/addVitalForm';
 
 function relPath(url) {
   const arr = url.split('/');
@@ -62,7 +39,7 @@ function AddVitalForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const DEFAULT_UNIT = UNITS[category][0];
+    const DEFAULT_UNIT = VITAL_UNITS[category][0];
     const isMood = category === 'mood';
     let measureStr;
     if (!unit && isMood) {
@@ -79,8 +56,8 @@ function AddVitalForm(props) {
 
   function setOptions(vital) {
     return [
-      ...[<option key="99" value={[UNITS.category][0]} disabled hidden>UNIT</option>],
-      ...UNITS[vital].map(
+      ...[<option key="99" value={[VITAL_UNITS.category][0]} disabled hidden>UNIT</option>],
+      ...VITAL_UNITS[vital].map(
         (cat, idx) => <option key={idx} value={cat}>{cat}</option>,
       )];
   }
@@ -140,5 +117,9 @@ function AddVitalForm(props) {
     </Pane>
   );
 }
+
+AddVitalForm.propTypes = {
+  userId: PropTypes.string.isRequired,
+};
 
 export default AddVitalForm;
