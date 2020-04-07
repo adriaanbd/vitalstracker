@@ -58,7 +58,7 @@ function AddVitalForm(props) {
     return [
       ...[<option key="99" value={[VITAL_UNITS.category][0]} disabled hidden>UNIT</option>],
       ...VITAL_UNITS[vital].map(
-        (cat, idx) => <option key={idx} value={cat}>{cat}</option>,
+        cat => <option key={cat} value={cat}>{cat}</option>,
       )];
   }
 

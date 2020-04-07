@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'evergreen-ui';
 
 function MeasureCard(props) {
@@ -22,5 +23,12 @@ function MeasureCard(props) {
     </>
   );
 }
+
+MeasureCard.propTypes = {
+  category: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
+  vitalId: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default MeasureCard;

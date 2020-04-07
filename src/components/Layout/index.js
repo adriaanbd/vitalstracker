@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import HeaderRibbon from './Header';
 import NavFooter from './Footer';
 
@@ -18,5 +19,17 @@ function Layout(props) {
     </>
   );
 }
+
+Layout.defaultProps = {
+  icon: undefined,
+  iconName: undefined,
+};
+
+Layout.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  iconName: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;

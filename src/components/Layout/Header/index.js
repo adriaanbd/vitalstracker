@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './HeaderRibbon.css';
 import { Link } from 'react-router-dom';
 
@@ -16,5 +17,14 @@ function HeaderRibbon(props) {
     </div>
   );
 }
+
+HeaderRibbon.defaultProps = {
+  icon: undefined,
+};
+
+HeaderRibbon.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+};
 
 export default HeaderRibbon;

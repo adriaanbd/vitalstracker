@@ -8,7 +8,7 @@ function NavFooter() {
     <Pane
       display="flex"
       justifyContent="space-evenly"
-      alignItem="center"
+      alignItems="center"
       height="10vh"
       fontSize="1rem"
       backgroundColor="#67899C"

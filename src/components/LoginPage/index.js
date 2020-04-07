@@ -28,7 +28,7 @@ function LoginPage() {
       setUsername('');
       history.push('/vitals');
     } else {
-      alert('Something went wrong. Please try again');
+      history.push('/');
     }
   }
 

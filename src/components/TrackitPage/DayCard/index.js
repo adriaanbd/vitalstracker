@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'evergreen-ui';
 import { fetchVitalsData } from '../../../store/thunks/vitals';
@@ -68,5 +69,9 @@ function DayCard(props) {
     </>
   );
 }
+
+DayCard.propTypes = {
+  day: PropTypes.string.isRequired,
+};
 
 export default DayCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pane, Text } from 'evergreen-ui';
 
 function ProgressCircleCard(props) {
@@ -38,5 +39,11 @@ function ProgressCircleCard(props) {
     </Pane>
   );
 }
+
+ProgressCircleCard.propTypes = {
+  measure: PropTypes.string.isRequired,
+  unit: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default ProgressCircleCard;

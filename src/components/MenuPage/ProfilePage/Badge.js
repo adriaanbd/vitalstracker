@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ProfileBadge(props) {
   const { icon, data } = props;
@@ -9,5 +10,10 @@ function ProfileBadge(props) {
     </div>
   );
 }
+
+ProfileBadge.propTypes = {
+  icon: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+};
 
 export default ProfileBadge;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon, Text } from 'evergreen-ui';
 
@@ -25,5 +26,11 @@ function FooterItem(props) {
     </Link>
   );
 }
+
+FooterItem.propTypes = {
+  link: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};
 
 export default FooterItem;

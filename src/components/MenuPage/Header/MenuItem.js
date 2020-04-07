@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Pane, Icon, Text } from 'evergreen-ui';
 
@@ -25,5 +26,11 @@ function MenuItem(props) {
     </Link>
   );
 }
+
+MenuItem.propTypes = {
+  relPath: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default MenuItem;

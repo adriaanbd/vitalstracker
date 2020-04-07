@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pane, Heading } from 'evergreen-ui';
 
 function DayCardHeader(props) {
@@ -23,5 +24,9 @@ function DayCardHeader(props) {
     </Pane>
   );
 }
+
+DayCardHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default DayCardHeader;

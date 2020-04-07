@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pane } from 'evergreen-ui';
 
 function ProgressTile(props) {
@@ -23,5 +24,11 @@ function ProgressTile(props) {
     </Pane>
   );
 }
+
+ProgressTile.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  measure: PropTypes.string.isRequired,
+};
 
 export default ProgressTile;

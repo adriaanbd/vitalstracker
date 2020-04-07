@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pane, Avatar, Text } from 'evergreen-ui';
 
 function MenuHeader(props) {
@@ -29,5 +30,10 @@ function MenuHeader(props) {
     </Pane>
   );
 }
+
+MenuHeader.propTypes = {
+  name: PropTypes.string.isRequired,
+  gender: PropTypes.string.isRequired,
+};
 
 export default MenuHeader;

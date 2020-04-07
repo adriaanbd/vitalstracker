@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import {
   Pane, Heading, Text,
 } from 'evergreen-ui';
+import PropTypes from 'prop-types';
 import Layout from '../../Layout';
 import AddVitalForm from './AddVitalForm';
 
@@ -44,5 +45,11 @@ function AddVitalCard(props) {
     </>
   );
 }
+
+AddVitalCard.propTypes = {
+  icon: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default AddVitalCard;
