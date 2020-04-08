@@ -2,7 +2,7 @@
 
 > A vitals tracking web app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
 
-To view screenshots of the different screens of the web app please go [here]().
+To view screenshots of the different screens of the web app please go [here](https://github.com/adriaanbd/vitalstracker/tree/mvp/screenshots).
 
 ## Built With
 
