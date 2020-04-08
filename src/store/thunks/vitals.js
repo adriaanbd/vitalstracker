@@ -1,6 +1,6 @@
 import sendRequest from '../../utils/api';
 import {
-  setVitals,
+  setVitals, createVitalAction,
 } from '../actions';
 
 
@@ -18,11 +18,12 @@ export function fetchVitalsData(userId) {
 }
 
 export function createVital(userId, vitalData) {
-  return async () => {
+  return async dispatch => {
     const path = `v1/users/${userId}/vitals`;
     try {
       const resp = await sendRequest('post', path, vitalData);
       const vital = await resp.data;
+      dispatch(createVitalAction(vital));
       return vital;
     } catch (error) {
       return error;

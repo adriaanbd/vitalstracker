@@ -8,7 +8,7 @@ import {
 export function createVitalAction(vital) {
   return {
     type: CREATE_VITAL,
-    payload: vital,
+    vital,
   };
 }
 

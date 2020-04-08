@@ -7,10 +7,10 @@ import {
 const INIT_STATE = {};
 
 function setVitals(state = INIT_STATE, action) {
-  const { type, vitals } = action;
+  const { type, vitals, vital } = action;
   switch (type) {
     case CREATE_VITAL:
-      return [...state, action];
+      return {...state, today: [...state.today, vital] };
     case SET_VITALS:
       return { ...vitals };
     default:
