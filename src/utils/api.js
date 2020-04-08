@@ -14,6 +14,6 @@ export default async function sendRequest(method, path, data) {
     const resp = await axios[method](URL, { ...data }, HEADERS);
     return resp;
   } catch (error) {
-    return error;
+    return error.response;
   }
 }

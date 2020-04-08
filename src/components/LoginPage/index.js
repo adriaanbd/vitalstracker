@@ -16,15 +16,17 @@ function LoginPage() {
     setUsername(value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const { target } = event;
+    let resp;
     if (target.id === 'signup') {
-      dispatch(createUser(username));
+      resp = await dispatch(createUser(username));
     } else {
-      dispatch(fetchUser(username));
+      resp = await dispatch(fetchUser(username));
     }
-    if (sessionStorage.userId) {
+    if (resp === 401) return;
+    if (resp === 201 && sessionStorage.userId) {
       setUsername('');
       history.push('/vitals');
     }

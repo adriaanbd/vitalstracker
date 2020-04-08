@@ -6,11 +6,15 @@ export function fetchUser(username) {
     const path = 'v1/sessions/';
     try {
       const res = await sendRequest('post', path, { username });
-      const userData = await res.data;
-      sessionStorage.setItem('userId', userData.id);
-      return dispatch(setCurrentUser(userData));
+      if (res.status === 201) {
+        const userData = await res.data;
+        sessionStorage.setItem('userId', userData.id);
+        sessionStorage.setItem('username', userData.username);
+        dispatch(setCurrentUser(userData));
+      }
+      return res.status;
     } catch (error) {
-      return error;
+      return error.response;
     }
   };
 }
@@ -20,11 +24,15 @@ export function createUser(username) {
     const path = 'v1/users/';
     try {
       const res = await sendRequest('post', path, { username });
-      const userData = await res.data;
-      sessionStorage.setItem('userId', userData.id);
-      return dispatch(createUserAction(userData));
+      if (res.status === 201) {
+        const userData = await res.data;
+        sessionStorage.setItem('userId', userData.id);
+        sessionStorage.setItem('username', userData.username);
+        dispatch(createUserAction(userData));
+      }
+      return res.status;
     } catch (error) {
-      return error;
+      return error.response;
     }
   };
 }
