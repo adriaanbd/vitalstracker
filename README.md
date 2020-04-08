@@ -21,20 +21,20 @@ To view screenshots of the different screens of the web app please go [here](htt
 ### Setup
 
 ```bash
-git clone https://github.com/adriaanbd/vitalstracker.git
-cd vitalstracker
+$ git clone https://github.com/adriaanbd/vitalstracker.git
+$ cd vitalstracker
 ```
 
 ### Install
 
 ```
-npm install
+$ npm install
 ```
 
 ### Usage
 
 ```
-npm run start
+$ npm run start
 ```
 
 ## Authors
