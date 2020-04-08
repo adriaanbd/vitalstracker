@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const HEROKU_BASE_URL = 'https://agile-oasis-62489.herokuapp.com/';
+const HEROKU_BASE_URL = 'https://agile-oasis-62489.herokuapp.com';
 // const LOCAL_BASE_URL = 'http://127.0.0.1:8000';
 
 export default async function sendRequest(method, path, data) {
