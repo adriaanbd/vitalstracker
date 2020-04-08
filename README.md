@@ -2,13 +2,7 @@
 
 > A vitals tracking web app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
 
-![Login screen](https://github.com/adriaanbd/vitalstracker/blob/mvp/screenshots/login.png)
-
-![Vital cards menu](https://github.com/adriaanbd/vitalstracker/blob/mvp/screenshots/vitalcards.png)
-![Add a vital](https://github.com/adriaanbd/vitalstracker/blob/mvp/screenshots/addvital.png)
-
-![Trackit screen](https://github.com/adriaanbd/vitalstracker/blob/mvp/screenshots/trackit.png)
-![Menu screen](https://github.com/adriaanbd/vitalstracker/blob/mvp/screenshots/menu.png)
+To view screenshots of the different screens of the web app please go [here]().
 
 ## Built With
 
