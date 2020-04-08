@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'evergreen-ui';
-import { fetchVitalsData } from '../../../store/thunks/vitals';
 import MeasureCard from './MeasureCard';
 import DayCardHeader from './Header';
 
@@ -28,23 +26,7 @@ function setMeasureCards(dayData) {
 }
 
 function DayCard(props) {
-  const { day } = props;
-  const dayToVitals = {
-    Today: 'todayVitals',
-    Yesterday: 'yesterdayVitals',
-    'More than 1 day ago': 'moreThan1DayAgoVitals',
-  };
-  const vitalsName = dayToVitals[day];
-  const dayData = useSelector(state => state[vitalsName]);
-  const { user } = useSelector(state => state);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const dayTitle = day.split(' ').length > 1
-      ? day.split(' ').join('_').toLowerCase() : day;
-    const userId = user.id ? user.id : sessionStorage.getItem('userId');
-    dispatch(fetchVitalsData(userId, dayTitle));
-  }, []);
+  const { day, data } = props;
 
   return (
     <>
@@ -61,10 +43,8 @@ function DayCard(props) {
             Date
           </Table.TextHeaderCell>
         </Table.Head>
-        <Table.Body
-          height="auto"
-        >
-          { setMeasureCards(dayData) }
+        <Table.Body height="auto">
+          { setMeasureCards(data) }
         </Table.Body>
       </Table>
     </>
@@ -73,6 +53,7 @@ function DayCard(props) {
 
 DayCard.propTypes = {
   day: PropTypes.string.isRequired,
+  // data: PropTypes.
 };
 
 export default DayCard;
