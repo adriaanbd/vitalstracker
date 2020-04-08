@@ -25,10 +25,16 @@ function ProgressTile(props) {
   );
 }
 
+ProgressTile.defaultProps = {
+  icon: undefined,
+  title: undefined,
+  measure: undefined,
+};
+
 ProgressTile.propTypes = {
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  measure: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  title: PropTypes.string,
+  measure: PropTypes.string,
 };
 
 export default ProgressTile;

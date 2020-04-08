@@ -37,7 +37,7 @@ function VitalCard(props) {
 }
 
 VitalCard.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
 };

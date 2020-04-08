@@ -20,10 +20,11 @@ function HeaderRibbon(props) {
 
 HeaderRibbon.defaultProps = {
   icon: undefined,
+  title: 'Track.It',
 };
 
 HeaderRibbon.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   icon: PropTypes.string,
 };
 

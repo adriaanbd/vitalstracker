@@ -27,7 +27,7 @@ function MeasureCard(props) {
 MeasureCard.propTypes = {
   category: PropTypes.string.isRequired,
   measure: PropTypes.string.isRequired,
-  vitalId: PropTypes.string.isRequired,
+  vitalId: PropTypes.number.isRequired,
   date: PropTypes.string.isRequired,
 };
 

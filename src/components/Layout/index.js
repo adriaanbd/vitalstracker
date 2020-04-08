@@ -23,10 +23,11 @@ function Layout(props) {
 Layout.defaultProps = {
   icon: undefined,
   iconName: undefined,
+  title: undefined,
 };
 
 Layout.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   icon: PropTypes.string,
   iconName: PropTypes.string,
   children: PropTypes.node.isRequired,

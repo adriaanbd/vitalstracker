@@ -19,6 +19,7 @@ function setMeasureCards(dayData) {
         measure={measure}
         vitalId={id}
         date={date}
+        key={i}
       />,
     );
   }
