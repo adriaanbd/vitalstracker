@@ -1,0 +1,53 @@
+#new-vital-form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0.5em;
+}
+
+#measure-and-unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  margin-bottom: 0.25em;
+}
+
+#vital-card-title {
+  font-size: 1rem;
+  color: #67899C;
+  align-self: center;
+}
+
+#vital-card-icon {
+  color: #62b5e5;
+  align-self: center;
+  margin-bottom: 4em;
+}
+
+.measure {
+  width: 50%;
+  background-color: white;
+  color: #67899C;
+  height: 2rem;
+  box-sizing: border-box;
+}
+
+#add-vital-btn {
+  background-color: rgb(173, 220, 145) !important;
+  color: white;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  font-size: 1em;
+}
+
+#unit-select {
+  border-left: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.8em;
+  margin-left: 0.25rem;
+}

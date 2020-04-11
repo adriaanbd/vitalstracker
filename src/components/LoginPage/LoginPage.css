@@ -1,0 +1,12 @@
+.auth-btn {
+  background-color: #62b5e5;
+  color: white;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+  margin-top: 0.1em;
+};
