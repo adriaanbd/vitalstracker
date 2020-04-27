@@ -2,19 +2,22 @@
 
 > A vitals tracking web app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
 
-To view screenshots of the different screens of the web app please go [here](https://github.com/adriaanbd/vitalstracker/tree/mvp/screenshots).
+![Images of All Screen Stacked Together](https://github.com/adriaanbd/vitalstracker/blob/development/screenshots/allscreens.png)
 
 ## Built With
 
-- Language: JavaScript
-- Framework: React
-- State Management: Redux
-- UI Framework: Evergreen
+- JavaScript
+- React
+- Redux
+- Thunk
+- React Router
+- Axios
+- ESLint
+- Evergreen UI
 
 ## Live Demo
 
-[Live Demo Link](https://vitalstracker.now.sh/)
-
+This mobile web app is deployed on Vercel (formerly Zeit) and can be accessed [here](https://vitalstracker.now.sh/).
 
 ## Getting Started
 
@@ -39,22 +42,14 @@ $ npm run start
 
 ## Authors
 
-👤 **Adriaan Beiertz**
+### Adriaan Beiertz
 
-- Github: [@adriaanbd](https://github.com/adriaanbd)
-- Twitter: [@abeiertz](https://twitter.com/abeiertz)
-- Linkedin: [Adriaan Beiertz](https://www.linkedin.com/in/adriaan-beiertz-a307a2158/)
+- [Github](https://github.com/adriaanbd)
+- [Twitter](https://twitter.com/abeiertz)
+- [Linkedin](https://www.linkedin.com/in/adriaanbd/)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
