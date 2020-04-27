@@ -1,6 +1,6 @@
-# Vital Tracker
+# Vitals Tracker
 
-> A vitals tracking web app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
+> A vitals tracking mobile web app to help you keep track of your weight, glucose, mood, temperature, systolic pressure and diastolic pressure.
 
 ![Images of All Screen Stacked Together](https://github.com/adriaanbd/vitalstracker/blob/development/screenshots/allscreens.png)
 
@@ -18,6 +18,8 @@
 ## Live Demo
 
 This mobile web app is deployed on Vercel (formerly Zeit) and can be accessed [here](https://vitalstracker.now.sh/).
+
+*Note*: The API is deployed on a free Heroku instance; therefore, requests might take longer than expected. The backend's repository can be found [here](https://github.com/adriaanbd/vitaltracker-backend-rails).
 
 ## Getting Started
 
